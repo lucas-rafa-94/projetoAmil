@@ -1,0 +1,44 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="ITE009AplAmil">RestReference</doc>
+   <resources>
+      <resource path="/ite009">
+         <method name="POST" soa:name="FaleConosco">
+            <doc title="POST FaleConosco">Comunicação entre o cliente e o contrato</doc>
+            <request>
+               <param name="tipo" style="query" type="xsd:string">
+                  <doc title="tipo">Tipo (Cliente, Nao Cliente e corretor)</doc>
+               </param>
+               <param name="nome" style="query" type="xsd:string">
+                  <doc title="nome">Nome Completo</doc>
+               </param>
+               <param name="cpf" style="query" type="xsd:string">
+                  <doc title="cpf">CPF</doc>
+               </param>
+               <param name="email" style="query" type="xsd:string">
+                  <doc title="email">Email Cliente</doc>
+               </param>
+               <param name="tele" style="query" type="xsd:string">
+                  <doc title="tele">Telefone Cliente</doc>
+               </param>
+               <param name="localidade" style="query" type="xsd:string">
+                  <doc title="localidade">Localidade Cliente</doc>
+               </param>
+               <param name="assunto" style="query" type="xsd:string">
+                  <doc title="assunto">Assunto fale conosco</doc>
+               </param>
+               <param name="mensagem" style="query" type="xsd:string">
+                  <doc title="mensagem">Mensagem chamado</doc>
+               </param>
+               <representation mediaType="application/json"/>
+            </request>
+            <response>
+               <representation mediaType="application/json"/>
+            </response>
+            <response>
+               <representation mediaType="application/json"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

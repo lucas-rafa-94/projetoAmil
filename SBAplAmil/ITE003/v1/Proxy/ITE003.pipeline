@@ -10,7 +10,7 @@
     </con:coreEntry>
     <con:router errorHandler="error-a7d41d9.742d0df0.0.15cef08e272.N7fff">
         <con:pipeline type="error" name="error-a7d41d9.742d0df0.0.15cef08e272.N7fff">
-            <con:stage id="_StageId-a7d41d9.742d0df0.0.15cef08e272.N7ffe" name="Erro Requisicao ITE003">
+            <con:stage id="_StageId-a7d41d9.742d0df0.0.15cef08e272.N7ffe" name="Erro Integracao ITE003">
                 <con:context/>
                 <con:actions>
                     <con1:Error>
@@ -21,7 +21,7 @@
             </con:stage>
         </con:pipeline>
         <con:flow>
-            <con:route-node name="Routing Requisicao ITE003" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:route-node name="Routing Integracao ITE003" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
                 <con:context/>
                 <con:actions>
                     <con1:route>
@@ -56,7 +56,8 @@ if($body.ite003Response.codResponse == "ITE003-0000"){
 process.nomeCorretor = $body.ite003Response.nomeCorretor
 process.body={
             "ite003Response":{
-                    "nomeCorretor": process.nomeCorretor
+                    "nomeCorretor": process.nomeCorretor,
+                    "codResponse": process.codResponse
                   }
 		}
 }else{
@@ -64,7 +65,7 @@ process.body={
             "ite003Response":{
                     "codResponse": process.codResponse
                   }
-		}
+        }
 }</con4:script>
                             </con4:javaScript>
                         </con1:responseTransform>

@@ -1,0 +1,245 @@
+{
+	"id": "4f3a8486-523b-c662-2180-7df1dad77887",
+	"name": "Amil REST API",
+	"description": "",
+	"order": [
+		"7c69b690-6118-a49d-bc0b-3d79039ad02c",
+		"20e430bd-2b70-2658-0bb8-616df9f09225",
+		"a589f84b-fd1a-7de0-4013-33c39af5cd69",
+		"54378794-313b-1cf7-da07-9132bd8db495",
+		"2a5cf0cc-1843-8e84-d229-77b845d5088a",
+		"6b9acbaa-8f2d-1e47-e8bc-7d48069b4dad",
+		"b7c4862b-98ed-2c43-0dec-02d30ae53231"
+	],
+	"folders": [],
+	"timestamp": 1498674528737,
+	"owner": "2295952",
+	"public": false,
+	"requests": [
+		{
+			"id": "20e430bd-2b70-2658-0bb8-616df9f09225",
+			"headers": "Content-Type: application/json\nAuthorization: Basic d2VibG9naWM6d2VsY29tZTE=\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic d2VibG9naWM6d2VsY29tZTE=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{portNode}}/ite003",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498675199794,
+			"name": "ITE003 - Simulador Node",
+			"description": "",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"rawModeData": "{\n\"ite003Request\": {\n   \"cpf\": \"999.999.999-99\", \n   \"cep\": \"08755-999\"\n}\n}"
+		},
+		{
+			"id": "2a5cf0cc-1843-8e84-d229-77b845d5088a",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{port}}/ITE005/buscaBoleto",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498832691974,
+			"name": "ITE005 - BuscaBoleto SOACS",
+			"description": "Esta integração ITE-005, com o nome funcional “Busca Boleto”, será responsável por buscar um boleto de pagamento baseado no ID da Proposta e no Tipo de Plano, ocorrerá sempre no sentido do OCC para o Barrramento AMIL passando pelo SOACS",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"responses": [],
+			"rawModeData": "{\n\"ite005Request\": {\n   \"idSisAmil\": \"12345\", \n   \"tpProposta\": \"BOLPME\"\n}\n}"
+		},
+		{
+			"id": "54378794-313b-1cf7-da07-9132bd8db495",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{portNode}}/ite005",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498832686165,
+			"name": "ITE005 - Simulador Node",
+			"description": "Esta integração ITE-005, com o nome funcional “Busca Boleto”, é responsável por buscar um boleto de pagamento no sistema da AMIL",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"responses": [],
+			"rawModeData": "{\n\"ite005Request\": {\n   \"idSisAmil\": \"12345\", \n   \"tpProposta\": \"BOLPME\"\n}\n}\n"
+		},
+		{
+			"id": "6b9acbaa-8f2d-1e47-e8bc-7d48069b4dad",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{portNode}}/ite009",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"data": [],
+			"dataMode": "raw",
+			"name": "ITE009 - Simulador Node",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1498834777876,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\"ite009Request\": {\n   \"cpf\": \"999.999.999-99\", \n   \"nome\": \"Teste Amil\",\n   \"tipo\": \"cliente\",\n   \"email\": \"email@amil.com\",\n   \"tele\": \"11994433221\",\n   \"localidade\": \"Sao Paulo\",\n   \"assunto\": \"testeAmil ITE-009\",\n   \"mensagem\": \"testeAmil ITE-009\"\n}\n}"
+		},
+		{
+			"id": "7c69b690-6118-a49d-bc0b-3d79039ad02c",
+			"headers": "Content-Type: application/json\nAuthorization: Basic d2VibG9naWM6d2VsY29tZTE=\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic d2VibG9naWM6d2VsY29tZTE=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{port}}/ITE003/validaCPF",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498674949975,
+			"name": "ITE003 - ValidaCPF SOACS",
+			"description": "",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"rawModeData": "{\n\"ite003Request\": {\n   \"cpf\": \"999.999.999-99\", \n   \"cep\": \"08755-999\"\n}\n}\n"
+		},
+		{
+			"id": "a589f84b-fd1a-7de0-4013-33c39af5cd69",
+			"headers": "Content-Type: application/json\nAuthorization: Basic d2VibG9naWM6d2VsY29tZTE=\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Authorization",
+					"value": "Basic d2VibG9naWM6d2VsY29tZTE=",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{port}}/AmilRestApi/resources/base64toPDF",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1498676409554,
+			"name": "Teste base64ToPDF - Requisicao Weblogic",
+			"description": "",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"rawModeData": "{\n\t\"pdf\": \"JVBERi0xLjMKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZwovT3V0bGluZXMgMiAwIFIKL1BhZ2VzIDMgMCBSID4+CmVuZG9iagoyIDAgb2JqCjw8IC9UeXBlIC9PdXRsaW5lcyAvQ291bnQgMCA+PgplbmRvYmoKMyAwIG9iago8PCAvVHlwZSAvUGFnZXMKL0tpZHMgWzYgMCBSCl0KL0NvdW50IDEKL1Jlc291cmNlcyA8PAovUHJvY1NldCA0IDAgUgovRm9udCA8PCAKL0YxIDggMCBSCj4+Cj4+Ci9NZWRpYUJveCBbMC4wMDAgMC4wMDAgNjEyLjAwMCA3OTIuMDAwXQogPj4KZW5kb2JqCjQgMCBvYmoKWy9QREYgL1RleHQgXQplbmRvYmoKNSAwIG9iago8PAovQ3JlYXRvciAoRE9NUERGKQovQ3JlYXRpb25EYXRlIChEOjIwMTUwNzIwMTMzMzIzKzAyJzAwJykKL01vZERhdGUgKEQ6MjAxNTA3MjAxMzMzMjMrMDInMDAnKQo+PgplbmRvYmoKNiAwIG9iago8PCAvVHlwZSAvUGFnZQovUGFyZW50IDMgMCBSCi9Db250ZW50cyA3IDAgUgo+PgplbmRvYmoKNyAwIG9iago8PCAvRmlsdGVyIC9GbGF0ZURlY29kZQovTGVuZ3RoIDY2ID4+CnN0cmVhbQp4nOMy0DMwMFBAJovSuZxCFIxN9AwMzRTMDS31DCxNFUJSFPTdDBWMgKIKIWkKCtEaIanFJZqxCiFeCq4hAO4PD0MKZW5kc3RyZWFtCmVuZG9iago4IDAgb2JqCjw8IC9UeXBlIC9Gb250Ci9TdWJ0eXBlIC9UeXBlMQovTmFtZSAvRjEKL0Jhc2VGb250IC9UaW1lcy1Cb2xkCi9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nCj4+CmVuZG9iagp4cmVmCjAgOQowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMDggMDAwMDAgbiAKMDAwMDAwMDA3MyAwMDAwMCBuIAowMDAwMDAwMTE5IDAwMDAwIG4gCjAwMDAwMDAyNzMgMDAwMDAgbiAKMDAwMDAwMDMwMiAwMDAwMCBuIAowMDAwMDAwNDE2IDAwMDAwIG4gCjAwMDAwMDA0NzkgMDAwMDAgbiAKMDAwMDAwMDYxNiAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9TaXplIDkKL1Jvb3QgMSAwIFIKL0luZm8gNSAwIFIKPj4Kc3RhcnR4cmVmCjcyNQolJUVPRgo=\"\n}"
+		},
+		{
+			"id": "b7c4862b-98ed-2c43-0dec-02d30ae53231",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{port}}/ITE009/faleConosco",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"data": [],
+			"dataMode": "raw",
+			"name": "ITE009 - FaleConosco SOACS",
+			"description": "Comunicação entre o cliente e o contrato",
+			"descriptionFormat": "html",
+			"time": 1498835255087,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\"ite009Request\": {\n   \"cpf\": \"999.999.999-99\", \n   \"nome\": \"Teste Amil\",\n   \"tipo\": \"cliente\",\n   \"email\": \"email@amil.com\",\n   \"tele\": \"11994433221\",\n   \"localidade\": \"Sao Paulo\",\n   \"assunto\": \"testeAmil ITE-009\",\n   \"mensagem\": \"testeAmil ITE-009\"\n}\n}"
+		}
+	]
+}

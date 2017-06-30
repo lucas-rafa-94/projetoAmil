@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
-    <dgm:gService name="ITE003">
+    <dgm:gService name="ITE005">
         <dgm:body borderWidth="2" arcRad="20" X="21" Y="41" width="137" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
@@ -8,42 +8,42 @@
         <dgm:shadow arcRad="20" X="11" Y="34" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
-        <dgm:outputPort name="ITE003" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="ITE005" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="7" Y="4" width="20" height="20"/>
         <dgm:operations/>
     </dgm:gService>
-    <dgm:gReference name="ITE003AplAmil">
-        <dgm:body borderWidth="2" arcRad="20" X="540" Y="41" width="136" height="54">
+    <dgm:gReference name="ITE005AplAmil">
+        <dgm:body borderWidth="2" arcRad="20" X="570" Y="41" width="136" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="530" Y="34" width="156" height="68">
+        <dgm:shadow arcRad="20" X="560" Y="34" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
-        <dgm:inputPort name="ITE003AplAmil" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:inputPort name="ITE005AplAmil" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
         <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/RestAdapterService20x20px.png" X="14" Y="4" width="20" height="20"/>
         <dgm:operations/>
     </dgm:gReference>
-    <dgm:gComponent name="ITE0032">
-        <dgm:body borderWidth="2" arcRad="20" X="284" Y="26" width="130" height="61">
+    <dgm:gComponent name="ITE0052">
+        <dgm:body borderWidth="2" arcRad="20" X="299" Y="26" width="130" height="61">
             <dgm:borderColor r="109" g="136" b="65"/>
             <dgm:lightBgColor r="201" g="224" b="155"/>
             <dgm:darkBgColor r="157" g="195" b="93"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="274" Y="19" width="150" height="77">
+        <dgm:shadow arcRad="20" X="289" Y="19" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
-        <dgm:outputPort name="businessservice.-845081762.ITE003AplAmil" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
+        <dgm:outputPort name="businessservice.-1431887776.ITE005AplAmil" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
         <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
-    <dgm:gWireLink source="ITE003" target="ITE0032/__service__" width="2">
-        <dgm:gSegment X1="168" Y1="51" X2="274" Y2="51"/>
+    <dgm:gWireLink source="ITE005" target="ITE0052/__service__" width="2">
+        <dgm:gSegment X1="168" Y1="51" X2="289" Y2="51"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
-    <dgm:gWireLink source="ITE0032/businessservice.-845081762.ITE003AplAmil" target="ITE003AplAmil" width="2">
-        <dgm:gSegment X1="424" Y1="51" X2="530" Y2="51"/>
+    <dgm:gWireLink source="ITE0052/businessservice.-1431887776.ITE005AplAmil" target="ITE005AplAmil" width="2">
+        <dgm:gSegment X1="439" Y1="51" X2="560" Y2="51"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>

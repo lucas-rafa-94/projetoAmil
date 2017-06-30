@@ -1,5 +1,3 @@
-var bodyParser = require('body-parser');
-
 var response = {
   ite003Response:{
     codResponse: "ITE003-0000"
@@ -8,16 +6,8 @@ var response = {
 
 module.exports = function(app) {
 
-        app.use(bodyParser.json());
-        app.use(bodyParser.urlencoded({
-            extended: true
-        }));
-        app.use(function(req, res, next) {
-            res.header("Access-Control-Allow-Origin", "*");
-            res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-            next();
-        });
         app.post('/ite003', function(req, res) {
+
             console.log('Request ITE - 003 : ' + JSON.stringify(req.body));
             console.log(JSON.stringify(req.body));
 
