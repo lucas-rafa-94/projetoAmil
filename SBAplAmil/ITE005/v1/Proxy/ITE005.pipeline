@@ -61,9 +61,11 @@ process.body={
                   }
 		}
 }else{
+process.descCodResponse = $body.ite005Response.descCodResponse
 	process.body={
             "ite005Response":{
-                    "codResponse": process.codResponse
+                    "codResponse": process.codResponse,
+                    "descCodResponse": process.descCodResponse
                   }
         }
 }</con4:script>
