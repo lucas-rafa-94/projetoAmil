@@ -6,7 +6,7 @@ var response = {
 
 module.exports = function(app) {
 
-        app.post('/ite005', function(req, res) {
+        app.post('/ite005/buscaBoleto', function(req, res) {
 
             console.log('Request ITE - 005 : ' + JSON.stringify(req.body));
             console.log(JSON.stringify(req.body));
@@ -22,9 +22,8 @@ module.exports = function(app) {
             }else{
                 response.ite005Response.url = "http://127.0.0.1:2000/boleto"
                 response.ite005Response.codResponse = "ITE005-0000";
-                response.ite005Response.descCodResponse = undefined;
+                response.ite005Response.descCodResponse = "Mensagem Valida";
             }
-
             res.send(response);
         });
 };

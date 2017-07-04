@@ -27,9 +27,7 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/ResourceBundlesContentSet"/>
    </list>
    <list n="listOfChildren">
-      <hash><url n="URL" path="ITE003/ITE003.jpr"/></hash>
-      <hash><url n="URL" path="ITE005/ITE005.jpr"/></hash>
-      <hash><url n="URL" path="ITE009/ITE009.jpr"/></hash>
+      <hash><url n="URL" path="AmilSBITEs/AmilSBITEs.jpr"/></hash>
    </list>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
@@ -48,6 +46,6 @@
       </hash>
    </hash>
    <hash n="oracle.sb.tooling.ide.core.internal.application.SbApplication">
-      <value n="configContextSessionName" v="OSB-IDE_build_1498834917013"/>
+      <value n="configContextSessionName" v="OSB-IDE_build_1499200898527"/>
    </hash>
 </jws:workspace>

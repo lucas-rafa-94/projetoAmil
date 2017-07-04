@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config">
+    <con:coreEntry>
+        <con:binding type="Native REST" xsi:type="con:NativeRestBindingType">
+            <con:wadl ref="AmilSBITEs/v1/ITE006/Resources/ITE006"/>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router errorHandler="error-a7d41d9.N48ace154.0.15d0e1a8826.N7d0c">
+        <con:pipeline type="error" name="error-a7d41d9.N48ace154.0.15d0e1a8826.N7d0c">
+            <con:stage id="_StageId-a7d41d9.N48ace154.0.15d0e1a8826.N7d0b" name="Erro Integracao ITE006">
+                <con:context/>
+                <con:actions>
+                    <con1:Error>
+                        <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7d08</con2:id>
+                        <con1:errCode>ITE006</con1:errCode>
+                    </con1:Error>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:branch-node type="operation" id="_FlowId-a7d41d9.N48ace154.0.15d0e1a8826.N7f9b" name="ITE006 - Busca rede credenciada">
+                <con:context/>
+                <con:branch-table>
+                    <con:branch name="ListEstado">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="ITE006 - Route List Estado">
+                                <con:context/>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7f97</con2:id>
+                                        <con3:service ref="AmilSBITEs/v1/ITE006/Business/ITE006AplAmil" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>ListEstado</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con4:log>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7f4f</con2:id>
+                                                <con4:logLevel>error</con4:logLevel>
+                                                <con4:expr>
+                                                    <con2:xqueryText>$body</con2:xqueryText>
+                                                </con4:expr>
+                                                <con4:message>Request ITE006 - Estado</con4:message>
+                                            </con4:log>
+                                            <con1:javaScript>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7d05</con2:id>
+                                                <con1:script>var $body = process.body;
+process.body={
+            "ite006Request":
+                    process.body
+                  
+             }</con1:script>
+                                            </con1:javaScript>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con4:log>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7f1b</con2:id>
+                                                <con4:logLevel>error</con4:logLevel>
+                                                <con4:expr>
+                                                    <con2:xqueryText>$body</con2:xqueryText>
+                                                </con4:expr>
+                                                <con4:message>Response ITE006 - Estado</con4:message>
+                                            </con4:log>
+                                            <con1:javaScript>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7d1a</con2:id>
+                                                <con1:script>var $body = process.body;
+process.codResponse = $body.ite006Response.codResponse
+
+if($body.ite006Response.codResponse == "ITE006-0000"){
+process.listEstado = $body.ite006Response.listEstado;
+process.descCodResponse = $body.ite006Response.descCodResponse;
+process.body={
+            "ite006Response":{
+                    "listEstado": process.listEstado,
+                    "codResponse": process.codResponse,
+                    "descCodResponse": process.descCodResponse
+                  }
+		}
+}else{
+process.descCodResponse = $body.ite006Response.descCodResponse
+	process.body={
+            "ite006Response":{
+                    "codResponse": process.codResponse,
+                    "descCodResponse": process.descCodResponse
+                  }
+        }
+}</con1:script>
+                                            </con1:javaScript>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ListMunicipio">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="ITE006 - List Municipio">
+                                <con:context/>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7f62</con2:id>
+                                        <con3:service ref="AmilSBITEs/v1/ITE006/Business/ITE006AplAmil" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>ListMunicipio</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con4:log>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7ee8</con2:id>
+                                                <con4:logLevel>error</con4:logLevel>
+                                                <con4:expr>
+                                                    <con2:xqueryText>$body</con2:xqueryText>
+                                                </con4:expr>
+                                                <con4:message>Request ITE006 - Municipio</con4:message>
+                                            </con4:log>
+                                            <con1:javaScript>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7d02</con2:id>
+                                                <con1:script>var $body = process.body;
+process.body={
+            "ite006Request":
+                    process.body
+                  
+             }</con1:script>
+                                            </con1:javaScript>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con4:log>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7eb5</con2:id>
+                                                <con4:logLevel>error</con4:logLevel>
+                                                <con4:expr>
+                                                    <con2:xqueryText>$body</con2:xqueryText>
+                                                </con4:expr>
+                                                <con4:message>Response ITE006 - Municipio</con4:message>
+                                            </con4:log>
+                                            <con1:javaScript>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7d17</con2:id>
+                                                <con1:script>var $body = process.body;
+process.codResponse = $body.ite006Response.codResponse
+
+if($body.ite006Response.codResponse == "ITE006-0000"){
+process.listMunicipio = $body.ite006Response.listMunicipio;
+process.descCodResponse = $body.ite006Response.descCodResponse;
+process.body={
+            "ite006Response":{
+                    "listMunicipio": process.listMunicipio,
+                    "codResponse": process.codResponse,
+                    "descCodResponse": process.descCodResponse
+                  }
+		}
+}else{
+process.descCodResponse = $body.ite006Response.descCodResponse
+	process.body={
+            "ite006Response":{
+                    "codResponse": process.codResponse,
+                    "descCodResponse": process.descCodResponse
+                  }
+        }
+}</con1:script>
+                                            </con1:javaScript>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ListBairro">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="ITE006 - List Bairro">
+                                <con:context/>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7f5e</con2:id>
+                                        <con3:service ref="AmilSBITEs/v1/ITE006/Business/ITE006AplAmil" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>ListBairro</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con4:log>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7e82</con2:id>
+                                                <con4:logLevel>error</con4:logLevel>
+                                                <con4:expr>
+                                                    <con2:xqueryText>$body</con2:xqueryText>
+                                                </con4:expr>
+                                                <con4:message>Request ITE006 - Bairro</con4:message>
+                                            </con4:log>
+                                            <con1:javaScript>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7d00</con2:id>
+                                                <con1:script>var $body = process.body;
+process.body={
+            "ite006Request":
+                    process.body
+                  
+             }</con1:script>
+                                            </con1:javaScript>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con4:log>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7e4f</con2:id>
+                                                <con4:logLevel>error</con4:logLevel>
+                                                <con4:expr>
+                                                    <con2:xqueryText>$body</con2:xqueryText>
+                                                </con4:expr>
+                                                <con4:message>Response ITE006 - Bairro</con4:message>
+                                            </con4:log>
+                                            <con1:javaScript>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7d14</con2:id>
+                                                <con1:script>var $body = process.body;
+process.codResponse = $body.ite006Response.codResponse
+
+if($body.ite006Response.codResponse == "ITE006-0000"){
+process.listBairro = $body.ite006Response.listBairro;
+process.descCodResponse = $body.ite006Response.descCodResponse;
+process.body={
+            "ite006Response":{
+                    "listBairro": process.listBairro,
+                    "codResponse": process.codResponse,
+                    "descCodResponse": process.descCodResponse
+                  }
+		}
+}else{
+process.descCodResponse = $body.ite006Response.descCodResponse
+	process.body={
+            "ite006Response":{
+                    "codResponse": process.codResponse,
+                    "descCodResponse": process.descCodResponse
+                  }
+        }
+}</con1:script>
+                                            </con1:javaScript>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ListRegiao">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="ITE006 - List Regiao">
+                                <con:context/>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7f5a</con2:id>
+                                        <con3:service ref="AmilSBITEs/v1/ITE006/Business/ITE006AplAmil" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>ListRegiao</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con4:log>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7e1c</con2:id>
+                                                <con4:logLevel>error</con4:logLevel>
+                                                <con4:expr>
+                                                    <con2:xqueryText>$body</con2:xqueryText>
+                                                </con4:expr>
+                                                <con4:message>Request ITE006 - Regiao</con4:message>
+                                            </con4:log>
+                                            <con1:javaScript>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7cfe</con2:id>
+                                                <con1:script>var $body = process.body;
+process.body={
+            "ite006Request":
+                    process.body
+                  
+             }</con1:script>
+                                            </con1:javaScript>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con4:log>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7de9</con2:id>
+                                                <con4:logLevel>error</con4:logLevel>
+                                                <con4:expr>
+                                                    <con2:xqueryText>$body</con2:xqueryText>
+                                                </con4:expr>
+                                                <con4:message>Response ITE006 - Regiao</con4:message>
+                                            </con4:log>
+                                            <con1:javaScript>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7d12</con2:id>
+                                                <con1:script>var $body = process.body;
+process.codResponse = $body.ite006Response.codResponse
+
+if($body.ite006Response.codResponse == "ITE006-0000"){
+process.listRegiao = $body.ite006Response.listRegiao;
+process.descCodResponse = $body.ite006Response.descCodResponse;
+process.body={
+            "ite006Response":{
+                    "listRegiao": process.listRegiao,
+                    "codResponse": process.codResponse,
+                    "descCodResponse": process.descCodResponse
+                  }
+		}
+}else{
+process.descCodResponse = $body.ite006Response.descCodResponse
+	process.body={
+            "ite006Response":{
+                    "codResponse": process.codResponse,
+                    "descCodResponse": process.descCodResponse
+                  }
+        }
+}</con1:script>
+                                            </con1:javaScript>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ListEspecialidade">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="ITE006 - List Especialidade">
+                                <con:context/>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7f56</con2:id>
+                                        <con3:service ref="AmilSBITEs/v1/ITE006/Business/ITE006AplAmil" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>ListEspecialidade</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con4:log>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7db6</con2:id>
+                                                <con4:logLevel>error</con4:logLevel>
+                                                <con4:expr>
+                                                    <con2:xqueryText>$body</con2:xqueryText>
+                                                </con4:expr>
+                                                <con4:message>Request ITE006 - Especialidade</con4:message>
+                                            </con4:log>
+                                            <con1:javaScript>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7cfc</con2:id>
+                                                <con1:script>var $body = process.body;
+process.body={
+            "ite006Request":
+                    process.body
+                  
+             }</con1:script>
+                                            </con1:javaScript>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con4:log>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7d83</con2:id>
+                                                <con4:logLevel>error</con4:logLevel>
+                                                <con4:expr>
+                                                    <con2:xqueryText>$body</con2:xqueryText>
+                                                </con4:expr>
+                                                <con4:message>Response ITE006 - Especialidade</con4:message>
+                                            </con4:log>
+                                            <con1:javaScript>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7d10</con2:id>
+                                                <con1:script>var $body = process.body;
+process.codResponse = $body.ite006Response.codResponse
+
+if($body.ite006Response.codResponse == "ITE006-0000"){
+process.listEspecialidade = $body.ite006Response.listEspecialidade;
+process.descCodResponse = $body.ite006Response.descCodResponse;
+process.body={
+            "ite006Response":{
+                    "listEspecialidade": process.listEspecialidade,
+                    "codResponse": process.codResponse,
+                    "descCodResponse": process.descCodResponse
+                  }
+		}
+}else{
+process.descCodResponse = $body.ite006Response.descCodResponse
+	process.body={
+            "ite006Response":{
+                    "codResponse": process.codResponse,
+                    "descCodResponse": process.descCodResponse
+                  }
+        }
+}</con1:script>
+                                            </con1:javaScript>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:branch name="ListRedeCredenciada">
+                        <con:operator>equals</con:operator>
+                        <con:value/>
+                        <con:flow>
+                            <con:route-node name="ITE006 - List Rede Credenciada">
+                                <con:context/>
+                                <con:actions>
+                                    <con3:route>
+                                        <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7f52</con2:id>
+                                        <con3:service ref="AmilSBITEs/v1/ITE006/Business/ITE006AplAmil" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                        <con3:operation>ListRedeCredenciada</con3:operation>
+                                        <con3:outboundTransform>
+                                            <con4:log>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7d50</con2:id>
+                                                <con4:logLevel>error</con4:logLevel>
+                                                <con4:expr>
+                                                    <con2:xqueryText>$body</con2:xqueryText>
+                                                </con4:expr>
+                                                <con4:message>Request ITE006 -Rede Credenciada</con4:message>
+                                            </con4:log>
+                                            <con1:javaScript>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7cfa</con2:id>
+                                                <con1:script>var $body = process.body;
+process.body={
+            "ite006Request":
+                    process.body
+                  
+             }</con1:script>
+                                            </con1:javaScript>
+                                        </con3:outboundTransform>
+                                        <con3:responseTransform>
+                                            <con4:log>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7d1d</con2:id>
+                                                <con4:logLevel>error</con4:logLevel>
+                                                <con4:expr>
+                                                    <con2:xqueryText>$body</con2:xqueryText>
+                                                </con4:expr>
+                                                <con4:message>Response ITE006 - Rede Credenciada</con4:message>
+                                            </con4:log>
+                                            <con1:javaScript>
+                                                <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7d0d</con2:id>
+                                                <con1:script>var $body = process.body;
+process.codResponse = $body.ite006Response.codResponse
+
+if($body.ite006Response.codResponse == "ITE006-0000"){
+process.listRedeCredenciada = $body.ite006Response.listRedeCredenciada;
+process.descCodResponse = $body.ite006Response.descCodResponse;
+process.body={
+            "ite006Response":{
+                    "listRedeCredenciada": process.listRedeCredenciada,
+                    "codResponse": process.codResponse,
+                    "descCodResponse": process.descCodResponse
+                  }
+		}
+}else{
+process.descCodResponse = $body.ite006Response.descCodResponse
+	process.body={
+            "ite006Response":{
+                    "codResponse": process.codResponse,
+                    "descCodResponse": process.descCodResponse
+                  }
+        }
+}</con1:script>
+                                            </con1:javaScript>
+                                        </con3:responseTransform>
+                                    </con3:route>
+                                </con:actions>
+                            </con:route-node>
+                        </con:flow>
+                    </con:branch>
+                    <con:default-branch>
+                        <con:flow/>
+                    </con:default-branch>
+                </con:branch-table>
+            </con:branch-node>
+        </con:flow>
+        <con:partner-links/>
+    </con:router>
+</con:pipelineEntry>

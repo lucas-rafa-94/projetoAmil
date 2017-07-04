@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="ITE005AplAmil">RestReference</doc>
+   <resources>
+      <resource path="/ite005">
+         <method name="POST" soa:name="buscaBoleto">
+            <doc title="POST buscaBoleto">Esta integração ITE-005, com o nome funcional “Busca Boleto”, é responsável por buscar um boleto de pagamento no sistema da AMIL</doc>
+            <request>
+               <param name="idSisAmil" style="query" type="xsd:string">
+                  <doc title="idSisAmil">Número do ID da proposta gerada no SISAMIL</doc>
+               </param>
+               <param name="tpProposta" style="query" type="xsd:string">
+                  <doc title="tpProposta">BOLPME: tipo proposta PME | BOLDENTPF: tipo proposta PF (dental)</doc>
+               </param>
+               <representation mediaType="application/json"/>
+            </request>
+            <response>
+               <representation mediaType="application/json"/>
+            </response>
+            <response>
+               <representation mediaType="application/json"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

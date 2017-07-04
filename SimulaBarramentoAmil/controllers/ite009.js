@@ -1,12 +1,14 @@
-var response = {
-  ite009Response:{
-    codResponse: "ITE009-0000"
-  }
-}
+
 
 module.exports = function(app) {
 
-        app.post('/ite009', function(req, res) {
+        app.post('/ite009/faleConosco', function(req, res) {
+
+            var response = {
+                ite009Response:{
+                    codResponse: "ITE009-0000"
+                }
+            };
 
             console.log('Request ITE - 009 : ' + JSON.stringify(req.body));
             console.log(JSON.stringify(req.body));
@@ -26,7 +28,7 @@ module.exports = function(app) {
             }else{
                 response.ite009Response.numProtocolo = "12345678"
                 response.ite009Response.codResponse = "ITE009-0000"
-                response.ite009Response.descCodResponse = undefined;
+                response.ite009Response.descCodResponse = "Mensagem Valida";
             }
 
             res.send(response);
