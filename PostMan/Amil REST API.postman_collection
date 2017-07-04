@@ -9,7 +9,13 @@
 		"54378794-313b-1cf7-da07-9132bd8db495",
 		"2a5cf0cc-1843-8e84-d229-77b845d5088a",
 		"6b9acbaa-8f2d-1e47-e8bc-7d48069b4dad",
-		"b7c4862b-98ed-2c43-0dec-02d30ae53231"
+		"b7c4862b-98ed-2c43-0dec-02d30ae53231",
+		"adc3088d-bd22-984e-5b10-6c67ab10ec5e",
+		"3309440e-39e7-726c-b660-29956a9c8dcb",
+		"3ebbc0b3-f93a-a12d-3993-0730e69aa434",
+		"bf70bd68-9a7f-6b9d-48e8-b5d8c434a54e",
+		"7e168196-87ad-8618-bb04-e02e4ea867ff",
+		"bdf1cab5-1998-9541-f9a0-264f6a2d336e"
 	],
 	"folders": [],
 	"timestamp": 1498674528737,
@@ -62,7 +68,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://{{host}}:{{port}}/ITE005/buscaBoleto",
+			"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE005/buscaBoleto",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -73,12 +79,72 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1498832691974,
+			"time": 1499201540246,
 			"name": "ITE005 - BuscaBoleto SOACS",
 			"description": "Esta integração ITE-005, com o nome funcional “Busca Boleto”, será responsável por buscar um boleto de pagamento baseado no ID da Proposta e no Tipo de Plano, ocorrerá sempre no sentido do OCC para o Barrramento AMIL passando pelo SOACS",
 			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
 			"responses": [],
-			"rawModeData": "{\n\"ite005Request\": {\n   \"idSisAmil\": \"12345\", \n   \"tpProposta\": \"BOLPME\"\n}\n}"
+			"rawModeData": "{\n   \"idSisAmil\": \"12345\", \n   \"tpProposta\": \"BOLPME\"\n}"
+		},
+		{
+			"id": "3309440e-39e7-726c-b660-29956a9c8dcb",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE006/municipio",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"data": [],
+			"dataMode": "raw",
+			"name": "ITE006 - Teste chamada Municipio SOACS",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1499202897884,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"estado\": \"Sao Paulo\"\n}"
+		},
+		{
+			"id": "3ebbc0b3-f93a-a12d-3993-0730e69aa434",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE006/bairro",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1499203580389,
+			"name": "ITE006 -Teste chamada Bairro SOACS",
+			"description": "",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"responses": [],
+			"rawModeData": "{\n\t\"regiao\": \"Sao Paulo\"\n}"
 		},
 		{
 			"id": "54378794-313b-1cf7-da07-9132bd8db495",
@@ -157,7 +223,7 @@
 					"enabled": true
 				}
 			],
-			"url": "http://{{host}}:{{port}}/ITE003/validaCPF",
+			"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE003/validaCPF",
 			"queryParams": [],
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -169,11 +235,42 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1498674949975,
+			"time": 1499202375066,
 			"name": "ITE003 - ValidaCPF SOACS",
 			"description": "",
 			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
-			"rawModeData": "{\n\"ite003Request\": {\n   \"cpf\": \"999.999.999-99\", \n   \"cep\": \"08755-999\"\n}\n}\n"
+			"rawModeData": "{\n   \"cpf\": \"999.999.999-99\", \n   \"cep\": \"08755-999\"\n}\n"
+		},
+		{
+			"id": "7e168196-87ad-8618-bb04-e02e4ea867ff",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE006/especialidade",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"data": [],
+			"dataMode": "raw",
+			"name": "ITE006 - Teste chamada Especialidade",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1499203778332,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"bairro\": \"Teste\"\n}"
 		},
 		{
 			"id": "a589f84b-fd1a-7de0-4013-33c39af5cd69",
@@ -211,6 +308,37 @@
 			"rawModeData": "{\n\t\"pdf\": \"JVBERi0xLjMKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZwovT3V0bGluZXMgMiAwIFIKL1BhZ2VzIDMgMCBSID4+CmVuZG9iagoyIDAgb2JqCjw8IC9UeXBlIC9PdXRsaW5lcyAvQ291bnQgMCA+PgplbmRvYmoKMyAwIG9iago8PCAvVHlwZSAvUGFnZXMKL0tpZHMgWzYgMCBSCl0KL0NvdW50IDEKL1Jlc291cmNlcyA8PAovUHJvY1NldCA0IDAgUgovRm9udCA8PCAKL0YxIDggMCBSCj4+Cj4+Ci9NZWRpYUJveCBbMC4wMDAgMC4wMDAgNjEyLjAwMCA3OTIuMDAwXQogPj4KZW5kb2JqCjQgMCBvYmoKWy9QREYgL1RleHQgXQplbmRvYmoKNSAwIG9iago8PAovQ3JlYXRvciAoRE9NUERGKQovQ3JlYXRpb25EYXRlIChEOjIwMTUwNzIwMTMzMzIzKzAyJzAwJykKL01vZERhdGUgKEQ6MjAxNTA3MjAxMzMzMjMrMDInMDAnKQo+PgplbmRvYmoKNiAwIG9iago8PCAvVHlwZSAvUGFnZQovUGFyZW50IDMgMCBSCi9Db250ZW50cyA3IDAgUgo+PgplbmRvYmoKNyAwIG9iago8PCAvRmlsdGVyIC9GbGF0ZURlY29kZQovTGVuZ3RoIDY2ID4+CnN0cmVhbQp4nOMy0DMwMFBAJovSuZxCFIxN9AwMzRTMDS31DCxNFUJSFPTdDBWMgKIKIWkKCtEaIanFJZqxCiFeCq4hAO4PD0MKZW5kc3RyZWFtCmVuZG9iago4IDAgb2JqCjw8IC9UeXBlIC9Gb250Ci9TdWJ0eXBlIC9UeXBlMQovTmFtZSAvRjEKL0Jhc2VGb250IC9UaW1lcy1Cb2xkCi9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nCj4+CmVuZG9iagp4cmVmCjAgOQowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwMDggMDAwMDAgbiAKMDAwMDAwMDA3MyAwMDAwMCBuIAowMDAwMDAwMTE5IDAwMDAwIG4gCjAwMDAwMDAyNzMgMDAwMDAgbiAKMDAwMDAwMDMwMiAwMDAwMCBuIAowMDAwMDAwNDE2IDAwMDAwIG4gCjAwMDAwMDA0NzkgMDAwMDAgbiAKMDAwMDAwMDYxNiAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9TaXplIDkKL1Jvb3QgMSAwIFIKL0luZm8gNSAwIFIKPj4Kc3RhcnR4cmVmCjcyNQolJUVPRgo=\"\n}"
 		},
 		{
+			"id": "adc3088d-bd22-984e-5b10-6c67ab10ec5e",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE006/estado",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"data": [],
+			"dataMode": "raw",
+			"name": "ITE006 - Teste chamada Estado SOACS",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1499202792601,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\t\"produto\": \"produto Teste\"\n}"
+		},
+		{
 			"id": "b7c4862b-98ed-2c43-0dec-02d30ae53231",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
@@ -221,7 +349,36 @@
 					"enabled": true
 				}
 			],
-			"url": "http://{{host}}:{{port}}/ITE009/faleConosco",
+			"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE009/faleConosco",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1499201552889,
+			"name": "ITE009 - FaleConosco SOACS",
+			"description": "Comunicação entre o cliente e o contrato",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"responses": [],
+			"rawModeData": "{\n   \"cpf\": \"999.999.999-99\", \n   \"nome\": \"Teste Amil\",\n   \"tipo\": \"cliente\",\n   \"email\": \"email@amil.com\",\n   \"tele\": \"11994433221\",\n   \"localidade\": \"Sao Paulo\",\n   \"assunto\": \"testeAmil ITE-009\",\n   \"mensagem\": \"testeAmil ITE-009\"\n}"
+		},
+		{
+			"id": "bdf1cab5-1998-9541-f9a0-264f6a2d336e",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE006/redeCredenciada",
 			"queryParams": [],
 			"pathVariables": {},
 			"pathVariableData": [],
@@ -230,16 +387,47 @@
 			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
 			"data": [],
 			"dataMode": "raw",
-			"name": "ITE009 - FaleConosco SOACS",
-			"description": "Comunicação entre o cliente e o contrato",
+			"name": "ITE006 - Teste chamada Rede Credenciada",
+			"description": "",
 			"descriptionFormat": "html",
-			"time": 1498835255087,
+			"time": 1499204185524,
 			"version": 2,
 			"responses": [],
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"rawModeData": "{\n\"ite009Request\": {\n   \"cpf\": \"999.999.999-99\", \n   \"nome\": \"Teste Amil\",\n   \"tipo\": \"cliente\",\n   \"email\": \"email@amil.com\",\n   \"tele\": \"11994433221\",\n   \"localidade\": \"Sao Paulo\",\n   \"assunto\": \"testeAmil ITE-009\",\n   \"mensagem\": \"testeAmil ITE-009\"\n}\n}"
+			"rawModeData": "{\n\t\"produto\":\"Nome Produto\",\n\t\"estado\": \"Sao Paulo\",\n\t\"municipio\": \"Sao Paulo\",\n\t\"regiao\": \"Regiao 1\",\n\t\"bairro\": \"Bairro 1\",\n\t\"especialidade\": \"Teste Amil\"\n}"
+		},
+		{
+			"id": "bf70bd68-9a7f-6b9d-48e8-b5d8c434a54e",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE006/regiao",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"data": [],
+			"dataMode": "raw",
+			"name": "ITE006 - Teste chamada Regiao SOACS",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1499203698279,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"municipio\" : \"Sao Paulo\"\n}"
 		}
 	]
 }
