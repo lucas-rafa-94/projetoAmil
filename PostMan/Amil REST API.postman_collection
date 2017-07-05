@@ -15,7 +15,8 @@
 		"3ebbc0b3-f93a-a12d-3993-0730e69aa434",
 		"bf70bd68-9a7f-6b9d-48e8-b5d8c434a54e",
 		"7e168196-87ad-8618-bb04-e02e4ea867ff",
-		"bdf1cab5-1998-9541-f9a0-264f6a2d336e"
+		"bdf1cab5-1998-9541-f9a0-264f6a2d336e",
+		"5f708c5c-be66-eea9-42f0-49548d652d27"
 	],
 	"folders": [],
 	"timestamp": 1498674528737,
@@ -174,6 +175,37 @@
 			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
 			"responses": [],
 			"rawModeData": "{\n\"ite005Request\": {\n   \"idSisAmil\": \"12345\", \n   \"tpProposta\": \"BOLPME\"\n}\n}\n"
+		},
+		{
+			"id": "5f708c5c-be66-eea9-42f0-49548d652d27",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE018/dadosEndereco",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"data": [],
+			"dataMode": "raw",
+			"name": "ITE018 - Dados Endereço SOACS",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1499272317148,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\t\"cep\": \"12223\"\n}"
 		},
 		{
 			"id": "6b9acbaa-8f2d-1e47-e8bc-7d48069b4dad",
