@@ -16,7 +16,8 @@
 		"bf70bd68-9a7f-6b9d-48e8-b5d8c434a54e",
 		"7e168196-87ad-8618-bb04-e02e4ea867ff",
 		"bdf1cab5-1998-9541-f9a0-264f6a2d336e",
-		"5f708c5c-be66-eea9-42f0-49548d652d27"
+		"5f708c5c-be66-eea9-42f0-49548d652d27",
+		"e57157c8-324d-923a-6f6f-39ca74e01a6f"
 	],
 	"folders": [],
 	"timestamp": 1498674528737,
@@ -460,6 +461,256 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"rawModeData": "{\n\t\"municipio\" : \"Sao Paulo\"\n}"
+		},
+		{
+			"id": "e57157c8-324d-923a-6f6f-39ca74e01a6f",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE001/areaComercializacao",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"data": [],
+			"dataMode": "raw",
+			"name": "ITE001 - Busca Área de Comercialização",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1499288466961,
+			"version": 2,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK"
+					},
+					"time": 70,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"description": ""
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Wed, 05 Jul 2017 20:46:55 GMT",
+							"description": ""
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": ""
+						},
+						{
+							"name": "X-ORACLE-DMS-ECID",
+							"key": "X-ORACLE-DMS-ECID",
+							"value": "63d65328-6c38-441f-8537-a9ea95c70dfe-000003d3",
+							"description": ""
+						},
+						{
+							"name": "X-ORACLE-DMS-RID",
+							"key": "X-ORACLE-DMS-RID",
+							"value": "0",
+							"description": ""
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"ite001Response\":{\"estado\":\"SP\",\"cidade\":\"Cidade Teste\",\"bairro\":\"Bairro Teste\",\"descCodResponse\":\"Mensagem Valida\",\"rua\":\"Rua Teste\",\"codResponse\":\"ITE001-0000\"}}",
+					"language": "json",
+					"rawDataType": "text",
+					"previewType": "text",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"id": "303e1b9d-ada3-d804-0f59-03f5d3c5c89b",
+					"name": "Sucesso",
+					"isSample": true,
+					"scrollToResult": false,
+					"runTests": false,
+					"request": {
+						"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE001/areaComercializacao",
+						"pathVariables": {},
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": ""
+							}
+						],
+						"headers": "Content-Type: application/json\n",
+						"data": "{\n\t\"cep\": \"000000\",\n\t\"codProduto\": \"teste\",\n\t\"codFilial\": \"filial\",\n\t\"codUnidade\": \"unidade\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 65,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Wed, 05 Jul 2017 21:09:38 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "X-ORACLE-DMS-ECID",
+							"key": "X-ORACLE-DMS-ECID",
+							"value": "63d65328-6c38-441f-8537-a9ea95c70dfe-00000441",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-ORACLE-DMS-RID",
+							"key": "X-ORACLE-DMS-RID",
+							"value": "0",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"ite001Response\":{\"localizacao\":\"localizacao\",\"codResponse\":\"ITE001-0001\"}}",
+					"language": "json",
+					"rawDataType": "text",
+					"previewType": "text",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"name": "Insucesso - codFilial | codUnidade divergem",
+					"id": "70d94b7b-c9f8-f47e-220d-347e64382678",
+					"request": {
+						"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE001/areaComercializacao",
+						"pathVariables": {},
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"enabled": true
+							}
+						],
+						"headers": "Content-Type: application/json\n",
+						"data": "{\n\t\"cep\": \"000000\",\n\t\"codProduto\": \"teste\",\n\t\"codFilial\": \"fillial\",\n\t\"codUnidade\": \"uniidade\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 68,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Wed, 05 Jul 2017 21:11:16 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "X-ORACLE-DMS-ECID",
+							"key": "X-ORACLE-DMS-ECID",
+							"value": "63d65328-6c38-441f-8537-a9ea95c70dfe-0000044a",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-ORACLE-DMS-RID",
+							"key": "X-ORACLE-DMS-RID",
+							"value": "0",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"ite001Response\":{\"descCodResponse\":\"Mensagem Invalida\",\"codResponse\":\"ITE001-0001\"}}",
+					"language": "json",
+					"rawDataType": "text",
+					"previewType": "text",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"name": "Insucesso - Mensagem construída de forma errada",
+					"id": "254217d7-4683-8d6f-4430-e77e8e354118",
+					"request": {
+						"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE001/areaComercializacao",
+						"pathVariables": {},
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"enabled": true
+							}
+						],
+						"headers": "Content-Type: application/json\n",
+						"data": "{\n\t\"codProduto\": \"teste\",\n\t\"codFilial\": \"filial\",\n\t\"codUnidade\": \"unidade\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"cep\": \"000000\",\n\t\"codProduto\": \"teste\",\n\t\"codFilial\": \"filial\",\n\t\"codUnidade\": \"unidade\"\n}"
 		}
 	]
 }

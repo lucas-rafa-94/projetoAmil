@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ns:composite xmlns:ns="http://xmlns.oracle.com/sca/1.0">
     <ns:reference>
-        <ns:interface src="BusinessService:AmilSBITEs/ITE018AplAmil"/>
-    </ns:reference>
-    <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE005/Business/ITE005AplAmil"/>
     </ns:reference>
     <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE003/Business/ITE003AplAmil"/>
     </ns:reference>
     <ns:reference>
+        <ns:interface src="BusinessService:AmilSBITEs/v1/ITE001/Business/ITE001AplAmil"/>
+    </ns:reference>
+    <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE009/Business/ITE009AplAmil"/>
     </ns:reference>
     <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE006/Business/ITE006AplAmil"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:AmilSBITEs/v1/ITE018/Business/ITE018AplAmil"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:AmilSBITEs/v1/ITE018/Business/ITE018Interno"/>
     </ns:reference>
 </ns:composite>

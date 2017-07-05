@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con4="http://www.bea.com/wli/sb/stages/publish/config">
+    <con:coreEntry>
+        <con:binding type="Native REST" xsi:type="con:NativeRestBindingType">
+            <con:wadl ref="AmilSBITEs/v1/ITE001/Resources/ITE001"/>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router errorHandler="error-a7d41d9.1625b28f.0.15d13b5e239.N7ffb">
+        <con:pipeline type="error" name="error-a7d41d9.1625b28f.0.15d13b5e239.N7ffb">
+            <con:stage id="_StageId-a7d41d9.1625b28f.0.15d13b5e239.N7ffa" name="Erro Integracao ITE001">
+                <con:context/>
+                <con:actions>
+                    <con1:Error>
+                        <con2:id>_ActionId-a7d41d9.1625b28f.0.15d13b5e239.N7ff7</con2:id>
+                        <con1:errCode>ITE001</con1:errCode>
+                    </con1:Error>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="request" name="request-a7d41d9.1625b28f.0.15d13b5e239.N7d43"/>
+        <con:pipeline type="response" name="response-a7d41d9.1625b28f.0.15d13b5e239.N7d42">
+            <con:stage id="_StageId-a7d41d9.1625b28f.0.15d13b5e239.N7d40" name="Stage1">
+                <con:context/>
+                <con:actions>
+                    <con1:ifThenElse>
+                        <con2:id>_ActionId-a7d41d9.1625b28f.0.15d13b5e239.N7e2b</con2:id>
+                        <con1:case id="_BranchId-a7d41d9.1625b28f.0.15d13b5e239.N7e2a">
+                            <con1:condition>
+                                <con2:xqueryText>$callIte018 = 'call'</con2:xqueryText>
+                            </con1:condition>
+                            <con1:actions>
+                                <con1:wsCallout>
+                                    <con2:id>_ActionId-a7d41d9.1625b28f.0.15d13b5e239.N7ca2</con2:id>
+                                    <con1:service ref="AmilSBITEs/v1/ITE018/Business/ITE018Interno" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                    <con1:operation>InternoBuscaCEP</con1:operation>
+                                    <con1:request>
+                                        <con1:payload wrapped="false">bodyCEP</con1:payload>
+                                    </con1:request>
+                                    <con1:response>
+                                        <con1:payload wrapped="false">bodyCEPResponse</con1:payload>
+                                    </con1:response>
+                                    <con1:requestTransform/>
+                                    <con1:responseTransform/>
+                                </con1:wsCallout>
+                                <con1:javaScript>
+                                    <con2:id>_ActionId-a7d41d9.1625b28f.0.15d13b5e239.N7bf9</con2:id>
+                                    <con1:script>var $body = process.bodyCEPResponse;
+process.body = {
+        "ite001Response":{
+              "rua": $body.ite018Response.rua,
+              "estado": $body.ite018Response.estado,
+              "bairro": $body.ite018Response.bairro,
+              "cidade": $body.ite018Response.cidade,
+              "codResponse": process.codResponse,
+              "descCodResponse": process.descCodResponse
+        }
+}</con1:script>
+                                </con1:javaScript>
+                            </con1:actions>
+                        </con1:case>
+                        <con1:default/>
+                    </con1:ifThenElse>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:pipeline-node name="ITE001 - Pipeline Pair">
+                <con:request>request-a7d41d9.1625b28f.0.15d13b5e239.N7d43</con:request>
+                <con:response>response-a7d41d9.1625b28f.0.15d13b5e239.N7d42</con:response>
+            </con:pipeline-node>
+            <con:route-node name="Routing Integracao ITE001">
+                <con:context/>
+                <con:actions>
+                    <con3:route>
+                        <con2:id>_ActionId-a7d41d9.1625b28f.0.15d13b5e239.N7e71</con2:id>
+                        <con3:service ref="AmilSBITEs/v1/ITE001/Business/ITE001AplAmil" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con3:operation>AreaComercializacao</con3:operation>
+                        <con3:outboundTransform>
+                            <con3:log xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/logging/config">
+                                <con2:id>_ActionId-a7d41d9.1625b28f.0.15d13b5e239.N7dc2</con2:id>
+                                <con3:logLevel>error</con3:logLevel>
+                                <con3:expr>
+                                    <con2:xqueryText>$body</con2:xqueryText>
+                                </con3:expr>
+                                <con3:message>Request ITE001 ************</con3:message>
+                            </con3:log>
+                            <con5:javaScript xmlns:con4="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/logging/config" xmlns:con5="http://www.bea.com/wli/sb/stages/transform/config">
+                                <con2:id>_ActionId-a7d41d9.1625b28f.0.15d13b5e239.N7dbf</con2:id>
+                                <con5:script>var $body = process.body;
+
+process.codUnidadeRequest = $body.codUnidade;
+process.codFilialRequest = $body.codFilial;
+process.cepRequest = $body.cep;
+
+process.body={
+            "ite001Request":
+                    process.body
+                  
+             }</con5:script>
+                            </con5:javaScript>
+                        </con3:outboundTransform>
+                        <con3:responseTransform>
+                            <con3:log xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/logging/config">
+                                <con2:id>_ActionId-a7d41d9.1625b28f.0.15d13b5e239.N7d4a</con2:id>
+                                <con3:logLevel>error</con3:logLevel>
+                                <con3:expr>
+                                    <con2:xqueryText>$body</con2:xqueryText>
+                                </con3:expr>
+                                <con3:message>Response ITE001 ************</con3:message>
+                            </con3:log>
+                            <con1:javaScript>
+                                <con2:id>_ActionId-a7d41d9.1625b28f.0.15d13b5e239.N7db5</con2:id>
+                                <con1:script>var $body = process.body;
+process.codResponse = $body.ite001Response.codResponse;
+process.descCodResponse = $body.ite001Response.descCodResponse
+
+if ($body.ite001Response.codResponse == "ITE001-0000") {
+
+    if ($body.ite001Response.codFilial == process.codFilialRequest &amp;&amp; $body.ite001Response.codUnidade == process.codUnidadeRequest) {
+        process.callIte018 = 'call';
+        process.bodyCEP = {
+            "cep": process.cepRequest
+            
+        }
+    } else {
+        process.localizacao = $body.ite001Response.localizacao;
+        process.body = {
+            "ite001Response": {
+                "codResponse": "ITE001-0001",
+                "localizacao": process.localizacao
+            }
+        }
+    }
+} else {
+    
+    process.body = {
+        "ite001Response": {
+            "codResponse": process.codResponse,
+            "descCodResponse": process.descCodResponse
+        }
+    }
+}</con1:script>
+                            </con1:javaScript>
+                            <con3:log xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con3="http://www.bea.com/wli/sb/stages/logging/config">
+                                <con2:id>_ActionId-a7d41d9.1625b28f.0.15d13b5e239.N7d47</con2:id>
+                                <con3:logLevel>error</con3:logLevel>
+                                <con3:expr>
+                                    <con2:xqueryText>$body</con2:xqueryText>
+                                </con3:expr>
+                                <con3:message>body ************</con3:message>
+                            </con3:log>
+                        </con3:responseTransform>
+                    </con3:route>
+                </con:actions>
+            </con:route-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>
