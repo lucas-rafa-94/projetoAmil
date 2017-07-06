@@ -8,6 +8,8 @@ var ite009 = require('./controllers/ite009');
 var ite006 = require('./controllers/ite006');
 var ite018 = require('./controllers/ite018');
 var ite001 = require('./controllers/ite001');
+var ite011 = require('./controllers/ite011');
+var ite004 = require('./controllers/ite004');
 
 var port = process.env.PORT || 3000;
 
@@ -27,6 +29,8 @@ ite009(app);
 ite006(app);
 ite018(app);
 ite001(app);
+ite011(app);
+ite004(app);
 
 
 app.listen(port);

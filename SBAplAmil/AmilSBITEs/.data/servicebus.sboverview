@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ns:composite xmlns:ns="http://xmlns.oracle.com/sca/1.0">
     <ns:reference>
+        <ns:interface src="BusinessService:AmilSBITEs/v1/ITE004/Business/ITE004AplAmil"/>
+    </ns:reference>
+    <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE005/Business/ITE005AplAmil"/>
     </ns:reference>
     <ns:reference>
@@ -17,6 +20,9 @@
     </ns:reference>
     <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE018/Business/ITE018AplAmil"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:AmilSBITEs/v1/ITE011/Business/ITE011AplAmil"/>
     </ns:reference>
     <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE018/Business/ITE018Interno"/>

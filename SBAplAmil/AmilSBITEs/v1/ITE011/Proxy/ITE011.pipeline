@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:pipelineEntry xmlns:con="http://www.bea.com/wli/sb/pipeline/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con1="http://www.bea.com/wli/sb/stages/transform/config" xmlns:con2="http://www.bea.com/wli/sb/stages/config" xmlns:con3="http://www.bea.com/wli/sb/stages/routing/config" xmlns:con4="http://www.bea.com/wli/sb/stages/logging/config">
+    <con:coreEntry>
+        <con:binding type="Native REST" xsi:type="con:NativeRestBindingType">
+            <con:wadl ref="AmilSBITEs/v1/ITE011/Resources/ITE011"/>
+        </con:binding>
+        <con:xqConfiguration>
+            <con:snippetVersion>1.0</con:snippetVersion>
+        </con:xqConfiguration>
+    </con:coreEntry>
+    <con:router errorHandler="error-N3f57fff2.N5093a20.0.15d1802e124.N7eda">
+        <con:pipeline type="request" name="request-N3f57fff2.N5093a20.0.15d1802e124.N8000">
+            <con:stage id="_StageId-N3f57fff2.N5093a20.0.15d1802e124.N7ffe" name="Confere campo Data Nascimento">
+                <con:context/>
+                <con:actions>
+                    <con4:log>
+                        <con2:id>_ActionId-N3f57fff2.N5093a20.0.15d1802e124.N7f7b</con2:id>
+                        <con4:logLevel>error</con4:logLevel>
+                        <con4:expr>
+                            <con2:xqueryText>$body</con2:xqueryText>
+                        </con4:expr>
+                        <con4:message>Request ITE011 ********</con4:message>
+                    </con4:log>
+                    <con1:javaScript>
+                        <con2:id>_ActionId-N3f57fff2.N5093a20.0.15d1802e124.N7fc3</con2:id>
+                        <con1:script>var $body = process.body;
+if ($body.dataNascimento == undefined){
+      process.identificador = "CNPJ";
+      process.body = {
+        "ite011Request":{
+              "cnpj": $body.identificador,
+        }
+      }
+}else{
+  process.identificador = "CPF";
+  process.body = {
+    "ite011Request":{
+          "cpf": $body.identificador,
+          "dataNascimento": $body.dataNascimento
+    }
+  }
+}</con1:script>
+                    </con1:javaScript>
+                    <con4:log>
+                        <con2:id>_ActionId-N3f57fff2.N5093a20.0.15d1802e124.N7edb</con2:id>
+                        <con4:logLevel>error</con4:logLevel>
+                        <con4:expr>
+                            <con2:xqueryText>$identificador</con2:xqueryText>
+                        </con4:expr>
+                        <con4:message>identificador *********</con4:message>
+                    </con4:log>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-N3f57fff2.N5093a20.0.15d1802e124.N7fff">
+            <con:stage id="_StageId-N3f57fff2.N5093a20.0.15d1802e124.N7f47" name="Response ITE011">
+                <con:context/>
+                <con:actions>
+                    <con4:log>
+                        <con2:id>_ActionId-N3f57fff2.N5093a20.0.15d1802e124.N7f46</con2:id>
+                        <con4:logLevel>error</con4:logLevel>
+                        <con4:expr>
+                            <con2:xqueryText>$body</con2:xqueryText>
+                        </con4:expr>
+                        <con4:message>Response ITE011 ********</con4:message>
+                    </con4:log>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fff2.N5093a20.0.15d1802e124.N7fc7">
+            <con:stage id="_StageId-N3f57fff2.N5093a20.0.15d1802e124.N7fc6" name="Erro Integração ITE011">
+                <con:context/>
+                <con:actions>
+                    <con1:Error>
+                        <con2:id>_ActionId-N3f57fff2.N5093a20.0.15d1802e124.N7fc0</con2:id>
+                        <con1:errCode>ITE011</con1:errCode>
+                    </con1:Error>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="error" name="error-N3f57fff2.N5093a20.0.15d1802e124.N7eda">
+            <con:stage id="_StageId-N3f57fff2.N5093a20.0.15d1802e124.N7e42" name="Erro Integração ITE011">
+                <con:context/>
+                <con:actions>
+                    <con1:Error>
+                        <con2:id>_ActionId-N3f57fff2.N5093a20.0.15d1802e124.N7e41</con2:id>
+                        <con1:errCode>ITE011</con1:errCode>
+                    </con1:Error>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:flow>
+            <con:pipeline-node name="Pipeline Integração ITE011">
+                <con:request>request-N3f57fff2.N5093a20.0.15d1802e124.N8000</con:request>
+                <con:response>response-N3f57fff2.N5093a20.0.15d1802e124.N7fff</con:response>
+            </con:pipeline-node>
+            <con:route-node name="Routing Integração ITE011" error-handler="error-N3f57fff2.N5093a20.0.15d1802e124.N7fc7">
+                <con:context/>
+                <con:actions>
+                    <con1:ifThenElse>
+                        <con2:id>_ActionId-N3f57fff2.N5093a20.0.15d1802e124.N7f85</con2:id>
+                        <con1:case id="_BranchId-N3f57fff2.N5093a20.0.15d1802e124.N7f84">
+                            <con1:condition>
+                                <con2:xqueryText>$identificador = 'CPF'</con2:xqueryText>
+                            </con1:condition>
+                            <con1:actions>
+                                <con3:route>
+                                    <con2:id>_ActionId-N3f57fff2.N5093a20.0.15d1802e124.N7f81</con2:id>
+                                    <con3:service ref="AmilSBITEs/v1/ITE011/Business/ITE011AplAmil" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                    <con3:operation>ConsultaCPF</con3:operation>
+                                    <con3:outboundTransform>
+                                        <con4:log>
+                                            <con2:id>_ActionId-N3f57fff2.N5093a20.0.15d1802e124.N7f12</con2:id>
+                                            <con4:logLevel>error</con4:logLevel>
+                                            <con4:expr>
+                                                <con2:xqueryText>$body</con2:xqueryText>
+                                            </con4:expr>
+                                            <con4:message>Request ITE011 - cpf ********</con4:message>
+                                        </con4:log>
+                                    </con3:outboundTransform>
+                                    <con3:responseTransform/>
+                                </con3:route>
+                            </con1:actions>
+                        </con1:case>
+                        <con1:default>
+                            <con3:route>
+                                <con2:id>_ActionId-N3f57fff2.N5093a20.0.15d1802e124.N7f7e</con2:id>
+                                <con3:service ref="AmilSBITEs/v1/ITE011/Business/ITE011AplAmil" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                                <con3:operation>ConsultaCNPJ</con3:operation>
+                                <con3:outboundTransform>
+                                    <con4:log>
+                                        <con2:id>_ActionId-N3f57fff2.N5093a20.0.15d1802e124.N7edf</con2:id>
+                                        <con4:logLevel>error</con4:logLevel>
+                                        <con4:expr>
+                                            <con2:xqueryText>$body</con2:xqueryText>
+                                        </con4:expr>
+                                        <con4:message>Request ITE011 - cnpj ********</con4:message>
+                                    </con4:log>
+                                </con3:outboundTransform>
+                                <con3:responseTransform/>
+                            </con3:route>
+                        </con1:default>
+                    </con1:ifThenElse>
+                </con:actions>
+            </con:route-node>
+        </con:flow>
+    </con:router>
+</con:pipelineEntry>
