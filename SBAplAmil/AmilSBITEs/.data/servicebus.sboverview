@@ -4,6 +4,9 @@
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE004/Business/ITE004AplAmil"/>
     </ns:reference>
     <ns:reference>
+        <ns:interface src="BusinessService:AmilSBITEs/v1/ITE007/Business/ITE007AplAmil"/>
+    </ns:reference>
+    <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE005/Business/ITE005AplAmil"/>
     </ns:reference>
     <ns:reference>
@@ -26,5 +29,8 @@
     </ns:reference>
     <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE018/Business/ITE018Interno"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:AmilSBITEs/v1/ITE012/Business/ITE012AplAmil"/>
     </ns:reference>
 </ns:composite>

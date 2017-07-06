@@ -1,0 +1,29 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
+   <doc title="ITE012">ITE012 - Consulta usuário na base de Parceiros</doc>
+   <resources>
+      <resource path="/consultaParceiros">
+         <method name="POST" soa:name="ConsultaParceiros">
+            <doc title="POST ConsultaParceiros">Verifica se o usuário faz parte da base de perceiros.</doc>
+            <request>
+               <param name="tpOferta" style="query" type="xsd:string"/>
+               <param name="nomeOferta" style="query" type="xsd:string"/>
+               <param name="cpf" style="query" type="xsd:string"/>
+               <param name="cnpj" style="query" type="xsd:string"/>
+               <param name="voucher" style="query" type="xsd:string"/>
+               <param name="bin" style="query" type="xsd:string"/>
+               <param name="dataNascimento" style="query" type="xsd:string"/>
+               <param name="parentesco" style="query" type="xsd:string"/>
+               <param name="token" style="query" type="xsd:string"/>
+               <representation mediaType="application/json"/>
+            </request>
+            <response status="200">
+               <representation mediaType="application/json"/>
+            </response>
+            <response status="500">
+               <representation mediaType="application/json"/>
+            </response>
+         </method>
+      </resource>
+   </resources>
+</application>

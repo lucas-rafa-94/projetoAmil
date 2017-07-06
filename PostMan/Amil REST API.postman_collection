@@ -17,7 +17,10 @@
 		"7e168196-87ad-8618-bb04-e02e4ea867ff",
 		"bdf1cab5-1998-9541-f9a0-264f6a2d336e",
 		"5f708c5c-be66-eea9-42f0-49548d652d27",
-		"e57157c8-324d-923a-6f6f-39ca74e01a6f"
+		"e57157c8-324d-923a-6f6f-39ca74e01a6f",
+		"578916ad-0680-3a7f-d423-4ab7e943eb75",
+		"438b9859-67b5-b045-ba46-f7e1483a6727",
+		"7a5cf761-fa0a-1b9e-7cdc-b1f8f884a3fb"
 	],
 	"folders": [],
 	"timestamp": 1498674528737,
@@ -149,6 +152,185 @@
 			"rawModeData": "{\n\t\"regiao\": \"Sao Paulo\"\n}"
 		},
 		{
+			"id": "438b9859-67b5-b045-ba46-f7e1483a6727",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE004/validaCodCorretora",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1499354408695,
+			"name": "ITE004 - Validação Código Corretora",
+			"description": "",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK"
+					},
+					"time": 64,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8; charset=utf-8",
+							"description": ""
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Thu, 06 Jul 2017 15:18:19 GMT",
+							"description": ""
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": ""
+						},
+						{
+							"name": "X-ORACLE-DMS-ECID",
+							"key": "X-ORACLE-DMS-ECID",
+							"value": "63d65328-6c38-441f-8537-a9ea95c70dfe-00000751",
+							"description": ""
+						},
+						{
+							"name": "X-ORACLE-DMS-RID",
+							"key": "X-ORACLE-DMS-RID",
+							"value": "0",
+							"description": ""
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"ite004Response\":{\"supervisores\":[\"Super 1, Super 2\"],\"descCodResponse\":\"Mensagem Valida\",\"corretora\":\"Teste Amil\",\"cpfSupervisores\":[\"12345, 56789\"],\"codResponse\":\"ITE004-0000\"}}",
+					"language": "json",
+					"rawDataType": "text",
+					"previewType": "text",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"name": "Sucesso",
+					"id": "b2a36948-f91e-19ff-5aad-abd1853110d5",
+					"isSample": true,
+					"scrollToResult": false,
+					"runTests": false,
+					"request": {
+						"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE004/validaCodCorretora",
+						"pathVariables": {},
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": ""
+							}
+						],
+						"headers": "Content-Type: application/json\n",
+						"data": "{\n\t\"cep\": \"34534-520\",\n\t\"cpf\": \"999.999.999-00\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK"
+					},
+					"time": 57,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8; charset=utf-8",
+							"description": ""
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Thu, 06 Jul 2017 15:20:16 GMT",
+							"description": ""
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": ""
+						},
+						{
+							"name": "X-ORACLE-DMS-ECID",
+							"key": "X-ORACLE-DMS-ECID",
+							"value": "63d65328-6c38-441f-8537-a9ea95c70dfe-0000075b",
+							"description": ""
+						},
+						{
+							"name": "X-ORACLE-DMS-RID",
+							"key": "X-ORACLE-DMS-RID",
+							"value": "0",
+							"description": ""
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"ite004Response\":{\"descCodResponse\":\"Mensagem Invalida\",\"codResponse\":\"ITE004-0001\"}}",
+					"language": "json",
+					"rawDataType": "text",
+					"previewType": "text",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"name": "Insucesso",
+					"id": "b2310b29-b806-d1c0-7051-b2de69983545",
+					"isSample": true,
+					"scrollToResult": false,
+					"runTests": false,
+					"request": {
+						"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE004/validaCodCorretora",
+						"pathVariables": {},
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"enabled": true,
+								"description": ""
+							}
+						],
+						"headers": "Content-Type: application/json\n",
+						"data": "{\n\t\"cep\": \"3453452\",\n\t\"cpf\": \"21341234\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"rawModeData": "{\n\t\"cep\": \"3453452\",\n\t\"cpf\": \"21341234\"\n}"
+		},
+		{
 			"id": "54378794-313b-1cf7-da07-9132bd8db495",
 			"headers": "Content-Type: application/json\n",
 			"headerData": [
@@ -176,6 +358,254 @@
 			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
 			"responses": [],
 			"rawModeData": "{\n\"ite005Request\": {\n   \"idSisAmil\": \"12345\", \n   \"tpProposta\": \"BOLPME\"\n}\n}\n"
+		},
+		{
+			"id": "578916ad-0680-3a7f-d423-4ab7e943eb75",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE011/consultaCNSEG",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1499354158218,
+			"name": "ITE011 -  Busca os dados dos PF/PME baseados no CPF/CNPJ",
+			"description": "",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 107,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Thu, 06 Jul 2017 14:31:03 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "X-ORACLE-DMS-ECID",
+							"key": "X-ORACLE-DMS-ECID",
+							"value": "63d65328-6c38-441f-8537-a9ea95c70dfe-00000655",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-ORACLE-DMS-RID",
+							"key": "X-ORACLE-DMS-RID",
+							"value": "0",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"ite011Response\":{\"mei\":\"2341241\",\"fantasia\":\"Nome Fantasia\",\"nome\":\"Teste Amil\",\"ativa\":\"OK\",\"descCodResponse\":\"Mensagem Valida\",\"razaoSocial\":\"Razao Social\",\"codResponse\":\"ITE011-0000\",\"dataAbertura\":\"11/11/2016\"}}",
+					"language": "json",
+					"rawDataType": "text",
+					"previewType": "text",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"name": "Sucesso - Pesquisa CNPJ",
+					"id": "9b97b4ff-67dd-5938-888c-404c41925d72",
+					"request": {
+						"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE011/consultaCNSEG",
+						"pathVariables": {},
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"enabled": true
+							}
+						],
+						"headers": "Content-Type: application/json\n",
+						"data": "{\n\t\"identificador\": \"12313452345\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 65,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Thu, 06 Jul 2017 14:32:12 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "X-ORACLE-DMS-ECID",
+							"key": "X-ORACLE-DMS-ECID",
+							"value": "63d65328-6c38-441f-8537-a9ea95c70dfe-0000065c",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-ORACLE-DMS-RID",
+							"key": "X-ORACLE-DMS-RID",
+							"value": "0",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"ite011Response\":{\"endereco\":\"Endereco teste\",\"nome\":\"Teste Amil\",\"dataNascimento\":\"11/07/1994\",\"descCodResponse\":\"Mensagem Valida\",\"nomeMae\":\"Nome mãe\",\"codResponse\":\"ITE011-0000\"}}",
+					"language": "json",
+					"rawDataType": "text",
+					"previewType": "text",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"name": "Sucesso - Busca CPF",
+					"id": "3404742a-a2e0-10ce-7402-fd3642977445",
+					"request": {
+						"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE011/consultaCNSEG",
+						"pathVariables": {},
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"enabled": true
+							}
+						],
+						"headers": "Content-Type: application/json\n",
+						"data": "{\n\t\"identificador\": \"12313452345\",\n\t\"dataNascimento\": \"11/11/2016\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 74,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Thu, 06 Jul 2017 14:32:50 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "X-ORACLE-DMS-ECID",
+							"key": "X-ORACLE-DMS-ECID",
+							"value": "63d65328-6c38-441f-8537-a9ea95c70dfe-0000065f",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-ORACLE-DMS-RID",
+							"key": "X-ORACLE-DMS-RID",
+							"value": "0",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"ite011Response\":{\"descCodResponse\":\"Mensagem Invalida\",\"codResponse\":\"ITE011-0001\"}}",
+					"language": "json",
+					"rawDataType": "text",
+					"previewType": "text",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"name": "Insucesso - Mensagem inválida",
+					"id": "2a5d6a1f-b94d-cb2f-812c-37bcd0a2d5ee",
+					"request": {
+						"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE011/consultaCNSEG",
+						"pathVariables": {},
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"enabled": true
+							}
+						],
+						"headers": "Content-Type: application/json\n",
+						"data": "{\n\t\"identifcador\": \"12313452345\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"rawModeData": "{\n\t\"identificador\": \"12313452345\",\n\t\"dataNascimento\": \"sdsga\"\n}"
 		},
 		{
 			"id": "5f708c5c-be66-eea9-42f0-49548d652d27",
@@ -238,6 +668,183 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"rawModeData": "{\n\"ite009Request\": {\n   \"cpf\": \"999.999.999-99\", \n   \"nome\": \"Teste Amil\",\n   \"tipo\": \"cliente\",\n   \"email\": \"email@amil.com\",\n   \"tele\": \"11994433221\",\n   \"localidade\": \"Sao Paulo\",\n   \"assunto\": \"testeAmil ITE-009\",\n   \"mensagem\": \"testeAmil ITE-009\"\n}\n}"
+		},
+		{
+			"id": "7a5cf761-fa0a-1b9e-7cdc-b1f8f884a3fb",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE012/consultaParceiros",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"data": [],
+			"dataMode": "raw",
+			"name": "ITE012 - Consulta usuário na base de Parceiros",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1499358232153,
+			"version": 2,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 78,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Thu, 06 Jul 2017 16:24:03 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "X-ORACLE-DMS-ECID",
+							"key": "X-ORACLE-DMS-ECID",
+							"value": "63d65328-6c38-441f-8537-a9ea95c70dfe-000008a4",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-ORACLE-DMS-RID",
+							"key": "X-ORACLE-DMS-RID",
+							"value": "0",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"ite012Response\":{\"nomeCliente\":\"Teste Amil\",\"dataNascimento\":\"11/07/2016\",\"descCodResponse\":\"Mensagem Valida\",\"codResponse\":\"ITE012-0000\"}}",
+					"language": "json",
+					"rawDataType": "text",
+					"previewType": "text",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"name": "Sucesso",
+					"id": "bb82e81f-20bd-19e0-3b60-206de0201ab9",
+					"request": {
+						"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE012/consultaParceiros",
+						"pathVariables": {},
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"enabled": true
+							}
+						],
+						"headers": "Content-Type: application/json\n",
+						"data": "{\n\t\"nomeOferta\": \"Flamengo\",\n\t\"tpOferta\": \"PF\",\n\t\"cnpj\": \"111.111.111.00001/32\",\n\t\"voucher\": \"Teste Voucher\",\n\t\"bin\": \"214134262456\",\n\t\"dataNascimento\": \"11/11/1994\",\n\t\"parentesco\": \"tio\",\n\t\"token\": \"asdgdfg25435q\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 68,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8; charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Thu, 06 Jul 2017 16:24:31 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						},
+						{
+							"name": "X-ORACLE-DMS-ECID",
+							"key": "X-ORACLE-DMS-ECID",
+							"value": "63d65328-6c38-441f-8537-a9ea95c70dfe-000008ab",
+							"description": "Custom header"
+						},
+						{
+							"name": "X-ORACLE-DMS-RID",
+							"key": "X-ORACLE-DMS-RID",
+							"value": "0",
+							"description": "Custom header"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"ite012Response\":{\"descCodResponse\":\"Mensagem Invalida\",\"codResponse\":\"ITE012-0001\"}}",
+					"language": "json",
+					"rawDataType": "text",
+					"previewType": "text",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"name": "Insucesso - Sem TpOferta",
+					"id": "f81dabaa-8072-4596-6999-d2ebf5619b73",
+					"request": {
+						"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE012/consultaParceiros",
+						"pathVariables": {},
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": "",
+								"enabled": true
+							}
+						],
+						"headers": "Content-Type: application/json\n",
+						"data": "{\n\t\"nomeOferta\": \"Flamengo\",\n\t\"cnpj\": \"111.111.111.00001/32\",\n\t\"voucher\": \"Teste Voucher\",\n\t\"bin\": \"214134262456\",\n\t\"dataNascimento\": \"11/11/1994\",\n\t\"parentesco\": \"tio\",\n\t\"token\": \"asdgdfg25435q\"\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"nomeOferta\": \"Flamengo\",\n\t\"tpOferta\": \"PF\",\n\t\"cnpj\": \"111.111.111.00001/32\",\n\t\"voucher\": \"Teste Voucher\",\n\t\"bin\": \"214134262456\",\n\t\"dataNascimento\": \"11/11/1994\",\n\t\"parentesco\": \"tio\",\n\t\"token\": \"asdgdfg25435q\"\n}"
 		},
 		{
 			"id": "7c69b690-6118-a49d-bc0b-3d79039ad02c",
