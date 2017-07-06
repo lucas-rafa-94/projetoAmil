@@ -20,7 +20,8 @@
 		"e57157c8-324d-923a-6f6f-39ca74e01a6f",
 		"578916ad-0680-3a7f-d423-4ab7e943eb75",
 		"438b9859-67b5-b045-ba46-f7e1483a6727",
-		"7a5cf761-fa0a-1b9e-7cdc-b1f8f884a3fb"
+		"7a5cf761-fa0a-1b9e-7cdc-b1f8f884a3fb",
+		"db405556-c7ea-f8ea-fb51-cd93e21bb7aa"
 	],
 	"folders": [],
 	"timestamp": 1498674528737,
@@ -1068,6 +1069,37 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"rawModeData": "{\n\t\"municipio\" : \"Sao Paulo\"\n}"
+		},
+		{
+			"id": "db405556-c7ea-f8ea-fb51-cd93e21bb7aa",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://{{host}}:{{port}}/AmilSBITEs/ITE007/statusProposta",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"data": [],
+			"dataMode": "raw",
+			"name": "ITE007 - Recupera o status atual de uma ou mais propostas",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1499374225475,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n\t\"listIdProposta\": [\"Teste 1\", \"Teste 2\"]\n}"
 		},
 		{
 			"id": "e57157c8-324d-923a-6f6f-39ca74e01a6f",
