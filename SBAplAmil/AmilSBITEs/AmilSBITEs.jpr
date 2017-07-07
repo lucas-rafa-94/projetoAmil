@@ -199,4 +199,6 @@
          </list>
       </hash>
    </hash>
+   <value n="SOA_DVM_FOLDER_NAME" v="v1/ITE007/Resources/"/>
+   <value n="SOA_XREF_FOLDER_NAME" v="v1/ITE007/Resources/"/>
 </jpr:project>

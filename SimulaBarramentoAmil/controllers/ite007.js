@@ -18,10 +18,28 @@ module.exports = function(app) {
             response.ite007Response.descCodResponse = "Mensagem Invalida";
             console.log("cep invalido *******");
         }else{
-            response.ite007Response.listIdPropostaSisAmil = ["1234", "5678"];
-            response.ite007Response.listStatusPropostaSisAmil = ["Aprovado", "Reprovado"];
+            response.ite007Response.listProposta = [{
+                "id": "12324",
+                "statusSisAmil": "Aprovado",
+                "codRetorno": "Ok",
+                "msgRetorno": "Mensagem Retorno",
+                "marcaOtica": "Marca Otica"
+            },
+                {
+                    "id": "12324",
+                    "statusSisAmil": "Aprovado",
+                    "codRetorno": "Ok",
+                    "msgRetorno": "Mensagem Retorno",
+                    "marcaOtica": "Marca Otica"
+                }];
             response.ite007Response.codResponse = "ITE007-0000";
             response.ite007Response.descCodResponse = "Mensagem Valida";
+
+            var i = response.ite007Response.listProposta.length;
+
+            for (var i in response.ite007Response.listProposta ){
+
+            }
         }
         res.send(response);
     });

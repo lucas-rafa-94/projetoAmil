@@ -20,7 +20,7 @@
         <tran:provider-id>http</tran:provider-id>
         <tran:inbound>false</tran:inbound>
         <tran:URI>
-            <env:value>http://192.168.0.14:8001/ite007</env:value>
+            <env:value>http://192.168.1.109:8001/ite007</env:value>
         </tran:URI>
         <tran:outbound-properties>
             <tran:load-balancing-algorithm>round-robin</tran:load-balancing-algorithm>

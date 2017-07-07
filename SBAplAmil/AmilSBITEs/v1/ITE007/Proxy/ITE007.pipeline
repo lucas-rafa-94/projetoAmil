@@ -56,6 +56,28 @@ process.body={
                                 </con4:expr>
                                 <con4:message>Response ITE007 **************</con4:message>
                             </con4:log>
+                            <con1:javaScript>
+                                <con2:id>_ActionId-N3f57fe93.319e36cd.0.15d1e1fc2a8.N7ffd</con2:id>
+                                <con1:script>var $body = process.body
+process.array = $body.ite007Response.listProposta
+
+
+for (var i  = 0; i &lt; process.array.length; i++){
+   var valueDVM = DVMFunctions.lookupValue('AmilSBITEs/v1/ITE007/Resources/ITE007StatusOCC', 'key', 'Aprovado', 'value', '0')
+   process.array[i].statusOCC = valueDVM
+}
+process.body = {
+    "ite007Response" : process.array
+}</con1:script>
+                            </con1:javaScript>
+                            <con4:log>
+                                <con2:id>_ActionId-N3f57fe93.319e36cd.0.15d1e1fc2a8.N7ffa</con2:id>
+                                <con4:logLevel>error</con4:logLevel>
+                                <con4:expr>
+                                    <con2:xqueryText>$body</con2:xqueryText>
+                                </con4:expr>
+                                <con4:message>Teste Array ************</con4:message>
+                            </con4:log>
                         </con3:responseTransform>
                     </con3:route>
                 </con:actions>
