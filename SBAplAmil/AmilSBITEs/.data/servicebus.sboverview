@@ -31,6 +31,9 @@
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE018/Business/ITE018Interno"/>
     </ns:reference>
     <ns:reference>
+        <ns:interface src="BusinessService:AmilSBITEs/ITE019AplAmil"/>
+    </ns:reference>
+    <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE012/Business/ITE012AplAmil"/>
     </ns:reference>
 </ns:composite>
