@@ -28,6 +28,7 @@
    </list>
    <list n="listOfChildren">
       <hash><url n="URL" path="AmilSBITEs/AmilSBITEs.jpr"/></hash>
+      <hash><url n="URL" path="AmilSBOauth2/AmilSBOauth2.jpr"/></hash>
    </list>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">

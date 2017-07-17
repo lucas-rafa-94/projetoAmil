@@ -1,17 +1,18 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
-   <doc title="ITE007">ITE007 - Recupera o status atual de uma ou mais propostas</doc>
+   <doc title="getOauthCodeAmilBus">RestReference</doc>
    <resources>
-      <resource path="/statusProposta">
-         <method name="POST" soa:name="StatusProposta">
+      <resource path="/auth/oauth/v2/token">
+         <method name="POST" soa:name="POST">
             <request>
-               <param name="listIdProposta" style="query" type="xsd:ENTITY"/>
+               <param name="scope" style="query" default="oraclecommerce" type="xsd:string"/>
+               <param name="grant_type" style="query" default="client_credentials" type="xsd:string"/>
                <representation mediaType="application/json"/>
             </request>
-            <response status="200">
+            <response>
                <representation mediaType="application/json"/>
             </response>
-            <response status="500">
+            <response>
                <representation mediaType="application/json"/>
             </response>
          </method>

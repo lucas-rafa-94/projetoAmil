@@ -1,13 +1,10 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
-   <doc title="ITE007">ITE007 - Recupera o status atual de uma ou mais propostas</doc>
+   <doc title="getOauthCode">RestService</doc>
    <resources>
-      <resource path="/statusProposta">
-         <method name="POST" soa:name="StatusProposta">
-            <request>
-               <param name="listIdProposta" style="query" type="xsd:ENTITY"/>
-               <representation mediaType="application/json"/>
-            </request>
+      <resource path="/getCode">
+         <method name="GET" soa:name="GET">
+            <request/>
             <response status="200">
                <representation mediaType="application/json"/>
             </response>
