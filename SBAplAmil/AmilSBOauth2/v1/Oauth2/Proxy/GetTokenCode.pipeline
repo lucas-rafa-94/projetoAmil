@@ -43,7 +43,7 @@
                                 <con2:id xmlns:con4="http://www.bea.com/wli/sb/stages/config">_ActionId-a000201.N3b9d1cfd.0.15d46c475e2.N7ffa</con2:id>
                                 <con3:logLevel>error</con3:logLevel>
                                 <con3:expr>
-                                    <con2:xqueryText xmlns:con4="http://www.bea.com/wli/sb/stages/config">$header</con2:xqueryText>
+                                    <con4:xqueryText xmlns:con4="http://www.bea.com/wli/sb/stages/config">$body</con4:xqueryText>
                                 </con3:expr>
                                 <con3:message>>>>> RETORNO&lt;&lt;&lt;&lt;&lt;</con3:message>
                             </con3:log>
@@ -51,6 +51,7 @@
                                 <con2:id xmlns:con4="http://www.bea.com/wli/sb/stages/config">_ActionId-a000201.Nf25ccac.0.15d477a5925.N7fcd</con2:id>
                                 <con3:script>var $body = process.body;
 process.access_token = $body.access_token
+process.expires_in = $body.expires_in
 
 process.body={
 		"access_token" : process.access_token

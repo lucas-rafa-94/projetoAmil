@@ -54,7 +54,7 @@ process.token = $responseToken.access_token;</con1:script>
                 </con:actions>
             </con:stage>
         </con:pipeline>
-        <con:pipeline type="response" name="response-a000201.N73850edc.0.15d42aa3317.N7ffe"></con:pipeline>
+        <con:pipeline type="response" name="response-a000201.N73850edc.0.15d42aa3317.N7ffe"/>
         <con:flow>
             <con:pipeline-node name="Pipeline Pair Node1">
                 <con:request>request-a000201.N73850edc.0.15d42aa3317.N7fff</con:request>
@@ -65,6 +65,7 @@ process.token = $responseToken.access_token;</con1:script>
                 <con:actions>
                     <con1:route>
                         <con2:id>_ActionId-a7d41d9.742d0df0.0.15cef08e272.N8000</con2:id>
+                        <con2:disabled>true</con2:disabled>
                         <con1:service ref="AmilSBITEs/v1/ITE003/Business/ITE003AplAmil" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
                         <con1:operation>ValidaCPFCorretor</con1:operation>
                         <con1:outboundTransform>

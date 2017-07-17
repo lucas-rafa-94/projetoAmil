@@ -13,6 +13,7 @@ var ite004 = require('./controllers/ite004');
 var ite012 = require('./controllers/ite012');
 var ite007 = require('./controllers/ite007');
 var ite019 = require('./controllers/ite019');
+var simulaToken = require('./controllers/SimulaToken');
 
 
 var port = process.env.PORT || 3000;
@@ -38,7 +39,7 @@ ite004(app);
 ite012(app);
 ite007(app);
 ite019(app);
-
+simulaToken(app);
 
 app.listen(port);
 
