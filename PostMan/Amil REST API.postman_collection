@@ -22,13 +22,174 @@
 		"438b9859-67b5-b045-ba46-f7e1483a6727",
 		"7a5cf761-fa0a-1b9e-7cdc-b1f8f884a3fb",
 		"db405556-c7ea-f8ea-fb51-cd93e21bb7aa",
-		"99245e7a-460e-982c-26b2-817bf45a215a"
+		"99245e7a-460e-982c-26b2-817bf45a215a",
+		"00f89738-2da9-b4fd-d434-7833a620c8f2",
+		"a07a635a-189d-34d0-cb98-636978e5e422",
+		"2fc249f1-c21c-0b68-5b79-5bb7005472e0"
 	],
 	"folders": [],
 	"timestamp": 1498674528737,
 	"owner": "2295952",
 	"public": false,
 	"requests": [
+		{
+			"id": "00f89738-2da9-b4fd-d434-7833a620c8f2",
+			"headers": "Authorization: Basic ZGRlODU1MWUtMTFmYy00MTRiLWJmZmUtNzZmMmY0NGVmZDJjOjE5MDhkNDBiLTRkMmYtNGM2NS1hOWMzLTBlOGVmMTA2M2ZmZg=='\nContent-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic ZGRlODU1MWUtMTFmYy00MTRiLWJmZmUtNzZmMmY0NGVmZDJjOjE5MDhkNDBiLTRkMmYtNGM2NS1hOWMzLTBlOGVmMTA2M2ZmZg=='",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://api-hom.amil.com.br/auth/oauth/v2/token",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "scope",
+					"value": "oraclecommerce",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "client_credentials",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1500303255575,
+			"name": "Busca TOKEN Barramento Amil",
+			"description": "",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 554,
+					"headers": [
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "no-store",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "Content-Encoding",
+							"key": "Content-Encoding",
+							"value": "gzip",
+							"description": "The type of encoding used on the data."
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "134",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 17 Jul 2017 14:53:07 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Pragma",
+							"key": "Pragma",
+							"value": "no-cache",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Apache-Coyote/1.1",
+							"description": "A name for the server"
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\r\n  \"access_token\":\"4b8b490f-55e7-4912-9164-9217364207e9\",\r\n  \"token_type\":\"Bearer\",\r\n  \"expires_in\":3600,\r\n  \"scope\":\"oraclecommerce\"\r\n}",
+					"language": "json",
+					"rawDataType": "text",
+					"previewType": "text",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"name": "Sucesso",
+					"id": "8525529f-7318-58dd-8438-4c842c5ec343",
+					"request": {
+						"url": "https://api-hom.amil.com.br/auth/oauth/v2/token",
+						"pathVariables": {},
+						"pathVariableData": [],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Authorization",
+								"value": "Basic ZGRlODU1MWUtMTFmYy00MTRiLWJmZmUtNzZmMmY0NGVmZDJjOjE5MDhkNDBiLTRkMmYtNGM2NS1hOWMzLTBlOGVmMTA2M2ZmZg=='",
+								"description": "",
+								"enabled": true,
+								"warning": ""
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": "",
+								"enabled": true
+							}
+						],
+						"headers": "Authorization: Basic ZGRlODU1MWUtMTFmYy00MTRiLWJmZmUtNzZmMmY0NGVmZDJjOjE5MDhkNDBiLTRkMmYtNGM2NS1hOWMzLTBlOGVmMTA2M2ZmZg=='\nContent-Type: application/x-www-form-urlencoded\n",
+						"data": [
+							{
+								"key": "scope",
+								"value": "oraclecommerce",
+								"description": "",
+								"type": "text",
+								"enabled": true
+							},
+							{
+								"key": "grant_type",
+								"value": "client_credentials",
+								"description": "",
+								"type": "text",
+								"enabled": true
+							}
+						],
+						"method": "POST",
+						"dataMode": "urlencoded"
+					}
+				}
+			]
+		},
 		{
 			"id": "20e430bd-2b70-2658-0bb8-616df9f09225",
 			"headers": "Content-Type: application/json\nAuthorization: Basic d2VibG9naWM6d2VsY29tZTE=\n",
@@ -92,6 +253,42 @@
 			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
 			"responses": [],
 			"rawModeData": "{\n   \"idSisAmil\": \"12345\", \n   \"tpProposta\": \"BOLPME\"\n}"
+		},
+		{
+			"id": "2fc249f1-c21c-0b68-5b79-5bb7005472e0",
+			"headers": "Authorization: Bearer 104bf8d3-d4c1-461c-9139-c565635010a3\nContent-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Bearer 104bf8d3-d4c1-461c-9139-c565635010a3",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8001/venda-online/api/corretor/1234234/validacep/2134234",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"data": null,
+			"dataMode": "params",
+			"name": "ITE003 - MOCK COM OAUTH",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1500313384335,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
 		},
 		{
 			"id": "3309440e-39e7-726c-b660-29956a9c8dcb",
@@ -1090,6 +1287,57 @@
 			"currentHelper": "normal",
 			"helperAttributes": {},
 			"rawModeData": "{\n\t\"codProduto\": \"teste codProduto\",\n\t\"codNormativa\": \"teste codNormativa\",\n\t\"formaPagamento\": \"teste formaPagamento\"\n}"
+		},
+		{
+			"id": "a07a635a-189d-34d0-cb98-636978e5e422",
+			"headers": "Authorization: Basic ZGRlODU1MWUtMTFmYy00MTRiLWJmZmUtNzZmMmY0NGVmZDJjOjE5MDhkNDBiLTRkMmYtNGM2NS1hOWMzLTBlOGVmMTA2M2ZmZg=='\nContent-Type: application/x-www-form-urlencoded\n",
+			"headerData": [
+				{
+					"key": "Authorization",
+					"value": "Basic ZGRlODU1MWUtMTFmYy00MTRiLWJmZmUtNzZmMmY0NGVmZDJjOjE5MDhkNDBiLTRkMmYtNGM2NS1hOWMzLTBlOGVmMTA2M2ZmZg=='",
+					"description": "",
+					"enabled": true
+				},
+				{
+					"key": "Content-Type",
+					"value": "application/x-www-form-urlencoded",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:8001/simulaToken",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "POST",
+			"collectionId": "4f3a8486-523b-c662-2180-7df1dad77887",
+			"data": [
+				{
+					"key": "scope",
+					"value": "oraclecommerce",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "client_credentials",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "MOCK SIMULA TOKEN",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1500313229154,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {}
 		},
 		{
 			"id": "a589f84b-fd1a-7de0-4013-33c39af5cd69",
