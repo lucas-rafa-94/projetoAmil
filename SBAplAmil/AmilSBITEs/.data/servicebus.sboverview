@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ns:composite xmlns:ns="http://xmlns.oracle.com/sca/1.0">
     <ns:reference>
-        <ns:interface src="BusinessService:AmilSBITEs/v1/ITE004/Business/ITE004AplAmil"/>
-    </ns:reference>
-    <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE007/Business/ITE007AplAmil"/>
-    </ns:reference>
-    <ns:reference>
-        <ns:interface src="BusinessService:AmilSBITEs/v1/ITE005/Business/ITE005AplAmil"/>
-    </ns:reference>
-    <ns:reference>
-        <ns:interface src="BusinessService:AmilSBITEs/v1/ITE003/Business/ITE003AplAmil"/>
     </ns:reference>
     <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE001/Business/ITE001AplAmil"/>
@@ -22,6 +13,21 @@
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE006/Business/ITE006AplAmil"/>
     </ns:reference>
     <ns:reference>
+        <ns:interface src="BusinessService:AmilSBITEs/v1/ITE004/Business/ITE004AplAmil"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:AmilSBITEs/ITE003AplAmil"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:AmilSBITEs/v1/ITE005/Business/ITE005AplAmil"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:AmilSBOauth2/v1/Oauth2/Business/getOauthCodeBus"/>
+    </ns:reference>
+    <ns:reference>
+        <ns:interface src="BusinessService:AmilSBITEs/v1/ITE019/Business/ITE019AplAmil"/>
+    </ns:reference>
+    <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE018/Business/ITE018AplAmil"/>
     </ns:reference>
     <ns:reference>
@@ -29,9 +35,6 @@
     </ns:reference>
     <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE018/Business/ITE018Interno"/>
-    </ns:reference>
-    <ns:reference>
-        <ns:interface src="BusinessService:AmilSBITEs/ITE019AplAmil"/>
     </ns:reference>
     <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE012/Business/ITE012AplAmil"/>

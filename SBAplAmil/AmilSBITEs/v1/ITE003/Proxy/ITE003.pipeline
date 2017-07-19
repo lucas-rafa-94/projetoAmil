@@ -66,7 +66,6 @@ process.token = $responseToken.access_token;</con1:script>
                     <con1:route>
                         <con2:id>_ActionId-a7d41d9.742d0df0.0.15cef08e272.N8000</con2:id>
                         <con1:service ref="AmilSBITEs/v1/ITE003/Business/ITE003AplAmil" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
-                        <con1:operation>ValidaCPFCorretor</con1:operation>
                         <con1:outboundTransform>
                             <con4:transport-headers xmlns:con4="http://www.bea.com/wli/sb/stages/transform/config">
                                 <con2:id>_ActionId-a655879.N259e6474.0.15d50f1bf56.N7ffa</con2:id>
@@ -88,15 +87,23 @@ process.token = $responseToken.access_token;</con1:script>
                             </con3:log>
                             <con4:javaScript xmlns:con4="http://www.bea.com/wli/sb/stages/transform/config">
                                 <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7cf4</con2:id>
-                                <con4:script>var $body = process.body;
+                                <con4:script><![CDATA[var $body = process.body;
 process.body={
             "ite003Request":
                     process.body
                   
              }
-process.outbound.ctx::transport.ctx::request.http::["cpf"] = 1234125
-process.outbound.ctx::transport.ctx::request.http::["cpf"] = 1234125</con4:script>
+             
+process.outbound = '<con:endpoint name="BusinessService$AmilSBITEs$v1$ITE003$Business$ITE003AplAmil" xmlns:con="http://www.bea.com/wli/sb/context"><con:service/><con:transport><con:mode>request-response</con:mode><con:qualityOfService>best-effort</con:qualityOfService><con:request xsi:type="http:HttpRequestMetaData" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><tran:headers xsi:type="http:HttpRequestHeaders" xmlns:tran="http://www.bea.com/wli/sb/transports"><tran:user-header name="Authorization" value="Bearer 104bf8d3-d4c1-461c-9139-c565635010a3"/><http:Content-Type>application/x-www-form-urlencoded</http:Content-Type><user-metadata name="cep" value="12312" xmlns="http://www.bea.com/wli/sb/transports"/><user-metadata name="cpf" value="12312" xmlns="http://www.bea.com/wli/sb/transports"/></tran:headers></con:request></con:transport><con:security><con:doOutboundWss>true</con:doOutboundWss></con:security></con:endpoint>']]></con4:script>
                             </con4:javaScript>
+                            <con3:log>
+                                <con2:id>_ActionId-a640113.N56d0595c.0.15d5929e756.N7ffe</con2:id>
+                                <con3:logLevel>error</con3:logLevel>
+                                <con3:expr>
+                                    <con2:xqueryText>$outbound</con2:xqueryText>
+                                </con3:expr>
+                                <con3:message>*********************** teste *************************</con3:message>
+                            </con3:log>
                         </con1:outboundTransform>
                         <con1:responseTransform>
                             <con3:log>

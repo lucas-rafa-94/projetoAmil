@@ -3,7 +3,7 @@
     <con:coreEntry>
         <con:description>This service was created by the REST adapter</con:description>
         <con1:binding type="native REST" xsi:type="con:NativeRestBindingType" xmlns:con="http://www.bea.com/wli/sb/services/bindings/config" xmlns:con1="http://xmlns.oracle.com/servicebus/business/config">
-            <con:wadl ref="AmilSBITEs/v1/ITE003/Resources/ITE003"/>
+            <con:wadl ref="AmilSBITEs/v1/ITE003/Resources/ITE003AplAmil"/>
         </con1:binding>
         <oper:operations enabled="true">
             <oper:throttling enabled="false"/>
