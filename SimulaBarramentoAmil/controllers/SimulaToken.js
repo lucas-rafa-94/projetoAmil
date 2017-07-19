@@ -17,9 +17,9 @@ module.exports = function(app) {
         }
 
         console.log(req.headers);
-        console.log(req.body);
+        console.log(req.query);
 
-        if(req.header('authorization') === "Basic ZGRlODU1MWUtMTFmYy00MTRiLWJmZmUtNzZmMmY0NGVmZDJjOjE5MDhkNDBiLTRkMmYtNGM2NS1hOWMzLTBlOGVmMTA2M2ZmZg=='" && req.body.scope === "oraclecommerce" && req.body.grant_type === "client_credentials" ) {
+        if(req.header('authorization') === "Basic ZGRlODU1MWUtMTFmYy00MTRiLWJmZmUtNzZmMmY0NGVmZDJjOjE5MDhkNDBiLTRkMmYtNGM2NS1hOWMzLTBlOGVmMTA2M2ZmZg=='" && req.query.scope === "oraclecommerce" && req.query.grant_type === "client_credentials" ) {
             console.log(responseOk);
             res.send(responseOk);
         }else{

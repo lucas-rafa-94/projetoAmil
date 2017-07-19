@@ -29,7 +29,7 @@
                         <con1:service ref="AmilSBOauth2/v1/Oauth2/Business/getOauthCodeBus" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
                         <con1:operation>GET</con1:operation>
                         <con1:request>
-                            <con1:payload wrapped="false">body</con1:payload>
+                            <con1:payload wrapped="false"/>
                         </con1:request>
                         <con1:response>
                             <con1:payload wrapped="false">bodyTokenResponse</con1:payload>
@@ -65,7 +65,6 @@ process.token = $responseToken.access_token;</con1:script>
                 <con:actions>
                     <con1:route>
                         <con2:id>_ActionId-a7d41d9.742d0df0.0.15cef08e272.N8000</con2:id>
-                        <con2:disabled>true</con2:disabled>
                         <con1:service ref="AmilSBITEs/v1/ITE003/Business/ITE003AplAmil" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
                         <con1:operation>ValidaCPFCorretor</con1:operation>
                         <con1:outboundTransform>
@@ -94,7 +93,9 @@ process.body={
             "ite003Request":
                     process.body
                   
-             }</con4:script>
+             }
+process.outbound.ctx::transport.ctx::request.http::["cpf"] = 1234125
+process.outbound.ctx::transport.ctx::request.http::["cpf"] = 1234125</con4:script>
                             </con4:javaScript>
                         </con1:outboundTransform>
                         <con1:responseTransform>

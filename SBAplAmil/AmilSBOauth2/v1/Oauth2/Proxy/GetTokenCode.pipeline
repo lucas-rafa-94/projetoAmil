@@ -30,11 +30,11 @@
                             <con3:transport-headers xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
                                 <con2:id xmlns:con4="http://www.bea.com/wli/sb/stages/config">_ActionId-a000201.Nf25ccac.0.15d477a5925.N7f8d</con2:id>
                                 <con3:header-set>outbound-request</con3:header-set>
-                                <con3:header value="expression" name="Content-Type">
-                                    <con2:xqueryText xmlns:con4="http://www.bea.com/wli/sb/stages/config">fn:concat("application", "/" , "x-www-form-urlencoded")</con2:xqueryText>
-                                </con3:header>
                                 <con3:header value="expression" name="Authorization">
-                                    <con2:xqueryText xmlns:con4="http://www.bea.com/wli/sb/stages/config">fn:concat("Basic ", "ZGRlODU1MWUtMTFmYy00MTRiLWJmZmUtNzZmMmY0NGVmZDJjOjE5MDhkNDBiLTRkMmYtNGM2NS1hOWMzLTBlOGVmMTA2M2ZmZg=='")</con2:xqueryText>
+                                    <con4:xqueryText xmlns:con4="http://www.bea.com/wli/sb/stages/config">fn:concat("Basic ", "ZGRlODU1MWUtMTFmYy00MTRiLWJmZmUtNzZmMmY0NGVmZDJjOjE5MDhkNDBiLTRkMmYtNGM2NS1hOWMzLTBlOGVmMTA2M2ZmZg=='")</con4:xqueryText>
+                                </con3:header>
+                                <con3:header value="expression" name="Content-Type">
+                                    <con4:xqueryText xmlns:con4="http://www.bea.com/wli/sb/stages/config">"application/x-www-form-urlencoded"</con4:xqueryText>
                                 </con3:header>
                             </con3:transport-headers>
                         </con1:outboundTransform>

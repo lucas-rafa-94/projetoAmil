@@ -24,9 +24,7 @@
             <env:value>/AmilSBOauth2/Oauth</env:value>
         </tran:URI>
         <tran:inbound-properties/>
-        <tran:all-headers>false</tran:all-headers>
-        <tran:user-header>Content-Type</tran:user-header>
-        <tran:user-header>Authorization</tran:user-header>
+        <tran:all-headers>true</tran:all-headers>
         <tran:provider-specific xsi:type="http:HttpEndPointConfiguration" xmlns:http="http://www.bea.com/wli/sb/transports/http">
             <http:inbound-properties/>
             <http:compression>

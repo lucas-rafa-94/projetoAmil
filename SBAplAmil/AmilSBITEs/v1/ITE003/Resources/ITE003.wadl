@@ -2,14 +2,14 @@
 <application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
    <doc title="ITE003">ITE003 - Validação CPF Corretor</doc>
    <resources>
-      <resource path="/validaCPF">
+      <resource path="/{cpf}/validacep/{cep}">
          <method name="POST" soa:name="ValidaCPFCorretor">
             <doc title="POST ValidaCPFCorretor">No momento da compra, valida se o corretor pode ou nao vender para o CEP informado</doc>
             <request>
-               <param name="cep" style="query" type="xsd:string">
+               <param name="cep" style="template" type="xsd:string">
                   <doc title="cep">CEP Compra</doc>
                </param>
-               <param name="cpf" style="query" type="xsd:string">
+               <param name="cpf" style="template" type="xsd:string">
                   <doc title="cpf">CPF do Corretor</doc>
                </param>
                <representation mediaType="application/json"/>

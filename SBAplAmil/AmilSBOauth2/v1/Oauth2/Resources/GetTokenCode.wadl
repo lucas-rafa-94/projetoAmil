@@ -6,9 +6,11 @@
          <method name="GET" soa:name="GET">
             <request/>
             <response status="200">
+               <representation mediaType="application/x-www-form-urlencoded"/>
                <representation mediaType="application/json"/>
             </response>
             <response status="500">
+               <representation mediaType="application/x-www-form-urlencoded"/>
                <representation mediaType="application/json"/>
             </response>
          </method>
