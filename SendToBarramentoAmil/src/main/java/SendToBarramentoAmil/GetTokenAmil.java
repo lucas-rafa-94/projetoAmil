@@ -19,14 +19,15 @@ public class GetTokenAmil {
             Client client = Client.create();
 
             WebResource webResource = client
-                    .resource("https://api-hom.amil.com.br/auth/oauth/v2/token?scope=oraclecommerce&grant_type=client_credentials");
+                    .resource("https://api-hom.amil.com.br/auth/oauth/v2/token");
             MultivaluedMapImpl map = new MultivaluedMapImpl();
+
             map.add("scope","oraclecommerce");
             map.add("grant_type","client_credentials");
 
             ClientResponse response = webResource.type("application/x-www-form-urlencoded")
                     .header("Authorization", "Basic ZGRlODU1MWUtMTFmYy00MTRiLWJmZmUtNzZmMmY0NGVmZDJjOjE5MDhkNDBiLTRkMmYtNGM2NS1hOWMzLTBlOGVmMTA2M2ZmZg=='")
-                    .post(ClientResponse.class);
+                    .post(ClientResponse.class, map);
 
             int res = response.getStatus();
             output = response.getEntity(String.class);

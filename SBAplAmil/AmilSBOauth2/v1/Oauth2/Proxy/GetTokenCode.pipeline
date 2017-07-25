@@ -25,7 +25,7 @@
                     <con1:route>
                         <con2:id>_ActionId-a000201.N3b9d1cfd.0.15d46c475e2.N8000</con2:id>
                         <con1:service ref="AmilSBOauth2/v1/Oauth2/Business/getOauthCodeAmilBus" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
-                        <con1:operation>POST</con1:operation>
+                        <con1:operation>Method1</con1:operation>
                         <con1:outboundTransform>
                             <con3:transport-headers copy-all="false" xmlns:con3="http://www.bea.com/wli/sb/stages/transform/config">
                                 <con2:id xmlns:con4="http://www.bea.com/wli/sb/stages/config">_ActionId-a000201.Nf25ccac.0.15d477a5925.N7f8d</con2:id>

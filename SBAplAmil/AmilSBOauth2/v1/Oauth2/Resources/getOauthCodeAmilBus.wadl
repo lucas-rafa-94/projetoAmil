@@ -3,7 +3,7 @@
    <doc title="getOauthCodeAmilBus">RestReference</doc>
    <resources>
       <resource path="/auth/oauth/v2/token">
-         <method name="POST" soa:name="POST">
+         <method name="POST" soa:name="Method1">
             <request>
                <param name="scope" style="query" default="oraclecommerce" type="xsd:string"/>
                <param name="grant_type" style="query" default="client_credentials" type="xsd:string"/>
