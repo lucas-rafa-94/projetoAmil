@@ -13,6 +13,7 @@
         <module>System</module>
         <module>AmilSBITEs</module>
         <module>AmilSBOauth2</module>
+        <module>AmilSBAplJava</module>
     </modules>
 
 </project>

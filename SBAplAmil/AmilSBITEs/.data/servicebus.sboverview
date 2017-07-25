@@ -16,10 +16,10 @@
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE004/Business/ITE004AplAmil"/>
     </ns:reference>
     <ns:reference>
-        <ns:interface src="BusinessService:AmilSBITEs/ITE003AplAmil"/>
+        <ns:interface src="BusinessService:AmilSBITEs/v1/ITE005/Business/ITE005AplAmil"/>
     </ns:reference>
     <ns:reference>
-        <ns:interface src="BusinessService:AmilSBITEs/v1/ITE005/Business/ITE005AplAmil"/>
+        <ns:interface src="BusinessService:AmilSBITEs/v1/ITE003/Business/ITE003AplAmil"/>
     </ns:reference>
     <ns:reference>
         <ns:interface src="BusinessService:AmilSBOauth2/v1/Oauth2/Business/getOauthCodeBus"/>

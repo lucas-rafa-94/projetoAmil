@@ -20,7 +20,51 @@
                 </con:actions>
             </con:stage>
         </con:pipeline>
+        <con:pipeline type="request" name="request-a655923.N43d1a49a.0.15d755b4c24.N7fc8">
+            <con:stage id="_StageId-a655923.N43d1a49a.0.15d755b4c24.N7f58" name="Request Token Oauth" xmlns:con3="http://www.bea.com/wli/sb/stages/logging/config">
+                <con:context/>
+                <con:actions>
+                    <con1:wsCallout>
+                        <con2:id>_ActionId-a655923.N43d1a49a.0.15d755b4c24.N7f57</con2:id>
+                        <con1:service ref="AmilSBOauth2/v1/Oauth2/Business/getOauthCodeBus" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:operation>GET</con1:operation>
+                        <con1:request>
+                            <con1:payload wrapped="false"/>
+                        </con1:request>
+                        <con1:response>
+                            <con1:payload wrapped="false">bodyTokenResponse</con1:payload>
+                        </con1:response>
+                        <con1:requestTransform/>
+                        <con1:responseTransform>
+                            <con3:log>
+                                <con2:id>_ActionId-a655923.N43d1a49a.0.15d755b4c24.N7f56</con2:id>
+                                <con3:logLevel>error</con3:logLevel>
+                                <con3:expr>
+                                    <con2:xqueryText>$bodyTokenResponse</con2:xqueryText>
+                                </con3:expr>
+                                <con3:message>>>>> RETORNO getCode &lt;&lt;&lt;&lt;</con3:message>
+                            </con3:log>
+                        </con1:responseTransform>
+                    </con1:wsCallout>
+                    <con1:javaScript>
+                        <con2:id>_ActionId-a655923.N43d1a49a.0.15d755b4c24.N7f55</con2:id>
+                        <con1:script>var $responseToken = process.bodyTokenResponse;
+process.token = $responseToken.access_token;</con1:script>
+                    </con1:javaScript>
+                </con:actions>
+            </con:stage>
+        </con:pipeline>
+        <con:pipeline type="response" name="response-a655923.N43d1a49a.0.15d755b4c24.N7fc7">
+            <con:stage id="_StageId-a655923.N43d1a49a.0.15d755b4c24.N7fc5" name="Stage1">
+                <con:context/>
+                <con:actions/>
+            </con:stage>
+        </con:pipeline>
         <con:flow>
+            <con:pipeline-node name="Pipeline Pair ITE005">
+                <con:request>request-a655923.N43d1a49a.0.15d755b4c24.N7fc8</con:request>
+                <con:response>response-a655923.N43d1a49a.0.15d755b4c24.N7fc7</con:response>
+            </con:pipeline-node>
             <con:route-node name="Routing Integracao ITE005" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
                 <con:context/>
                 <con:actions>

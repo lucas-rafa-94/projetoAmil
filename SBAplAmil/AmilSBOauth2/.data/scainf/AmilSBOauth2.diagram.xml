@@ -13,11 +13,11 @@
         <dgm:operations/>
     </dgm:gService>
     <dgm:gReference name="getOauthCodeAmilBus">
-        <dgm:body borderWidth="2" arcRad="20" X="468" Y="112" width="136" height="54">
+        <dgm:body borderWidth="2" arcRad="20" X="424" Y="112" width="136" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="458" Y="105" width="156" height="68">
+        <dgm:shadow arcRad="20" X="414" Y="105" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="getOauthCodeAmilBus" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
@@ -25,11 +25,11 @@
         <dgm:operations/>
     </dgm:gReference>
     <dgm:gReference name="getOauthCodeBus">
-        <dgm:body borderWidth="2" arcRad="20" X="468" Y="26" width="136" height="54">
+        <dgm:body borderWidth="2" arcRad="20" X="424" Y="26" width="136" height="54">
             <dgm:borderColor r="153" g="153" b="153"/>
             <dgm:bgColor r="255" g="255" b="255"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="458" Y="19" width="156" height="68">
+        <dgm:shadow arcRad="20" X="414" Y="19" width="156" height="68">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="getOauthCodeBus" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
@@ -37,12 +37,12 @@
         <dgm:operations/>
     </dgm:gReference>
     <dgm:gComponent name="GetTokenCode2">
-        <dgm:body borderWidth="2" arcRad="20" X="248" Y="97" width="130" height="61">
+        <dgm:body borderWidth="2" arcRad="20" X="226" Y="97" width="130" height="61">
             <dgm:borderColor r="109" g="136" b="65"/>
             <dgm:lightBgColor r="201" g="224" b="155"/>
             <dgm:darkBgColor r="157" g="195" b="93"/>
         </dgm:body>
-        <dgm:shadow arcRad="20" X="238" Y="90" width="150" height="77">
+        <dgm:shadow arcRad="20" X="216" Y="90" width="150" height="77">
             <dgm:bgColor r="196" g="228" b="240"/>
         </dgm:shadow>
         <dgm:inputPort name="__service__" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="SB Interface" callbackInterface="SB Interface"/>
@@ -50,12 +50,12 @@
         <dgm:nodeIcon URI="/oracle/sb/tooling/ide/sca/internal/icons/icon_pipeline_20x20.gif" X="10" Y="4" width="20" height="20"/>
     </dgm:gComponent>
     <dgm:gWireLink source="GetTokenCode" target="GetTokenCode2/__service__" width="2">
-        <dgm:gSegment X1="168" Y1="122" X2="238" Y2="122"/>
+        <dgm:gSegment X1="168" Y1="122" X2="216" Y2="122"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>
     <dgm:gWireLink source="GetTokenCode2/businessservice.-475565578.getOauthCodeAmilBus" target="getOauthCodeAmilBus" width="2">
-        <dgm:gSegment X1="388" Y1="122" X2="458" Y2="122"/>
+        <dgm:gSegment X1="366" Y1="122" X2="414" Y2="122"/>
         <dgm:baseColor r="153" g="153" b="153"/>
         <dgm:selectedColor r="49" g="106" b="196"/>
     </dgm:gWireLink>

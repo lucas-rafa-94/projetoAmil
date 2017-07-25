@@ -2,13 +2,12 @@
 <application xmlns:soa="http://www.oracle.com/soa/rest" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wadl.dev.java.net/2009/02">
    <doc title="getOauthCodeAmilBus">RestReference</doc>
    <resources>
-      <resource path="/auth/oauth/v2/token/">
+      <resource path="/auth/oauth/v2/token">
          <method name="POST" soa:name="POST">
             <request>
                <param name="scope" style="query" default="oraclecommerce" type="xsd:string"/>
                <param name="grant_type" style="query" default="client_credentials" type="xsd:string"/>
                <representation mediaType="application/x-www-form-urlencoded"/>
-               <representation mediaType="application/json"/>
             </request>
             <response>
                <representation mediaType="application/json"/>

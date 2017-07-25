@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../SendToBarramentoAmil.iml" filepath="$PROJECT_DIR$/../SendToBarramentoAmil.iml" />
       <module fileurl="file://$PROJECT_DIR$/SimulaBarramentoAmil.iml" filepath="$PROJECT_DIR$/SimulaBarramentoAmil.iml" />
     </modules>
   </component>

@@ -60,84 +60,30 @@ process.token = $responseToken.access_token;</con1:script>
                 <con:request>request-a000201.N73850edc.0.15d42aa3317.N7fff</con:request>
                 <con:response>response-a000201.N73850edc.0.15d42aa3317.N7ffe</con:response>
             </con:pipeline-node>
-            <con:route-node name="Routing Integracao ITE003" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
+            <con:route-node name="Routing Integracao ITE003 JavaApl" xmlns:con1="http://www.bea.com/wli/sb/stages/routing/config">
                 <con:context/>
                 <con:actions>
                     <con1:route>
                         <con2:id>_ActionId-a7d41d9.742d0df0.0.15cef08e272.N8000</con2:id>
-                        <con1:service ref="AmilSBITEs/v1/ITE003/Business/ITE003AplAmil" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                        <con1:service ref="AmilSBAplJava/v1/ITE003/Proxy/ITE003AplJava" xsi:type="ref:ProxyRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
                         <con1:outboundTransform>
-                            <con4:transport-headers xmlns:con4="http://www.bea.com/wli/sb/stages/transform/config">
-                                <con2:id>_ActionId-a655879.N259e6474.0.15d50f1bf56.N7ffa</con2:id>
-                                <con4:header-set>outbound-request</con4:header-set>
-                                <con4:header value="expression" name="Authorization">
-                                    <con2:xqueryText>fn:concat("Bearer ",$token)</con2:xqueryText>
-                                </con4:header>
-                                <con4:header value="expression" name="Content-type">
-                                    <con2:xqueryText>"application/x-www-form-urlencoded"</con2:xqueryText>
-                                </con4:header>
-                            </con4:transport-headers>
-                            <con3:log>
-                                <con2:id>_ActionId-a7d41d9.742d0df0.0.15cef08e272.N7ff8</con2:id>
-                                <con3:logLevel>error</con3:logLevel>
-                                <con3:expr>
-                                    <con2:xqueryText>$body</con2:xqueryText>
-                                </con3:expr>
-                                <con3:message>Request ITE003 ************</con3:message>
-                            </con3:log>
                             <con4:javaScript xmlns:con4="http://www.bea.com/wli/sb/stages/transform/config">
                                 <con2:id>_ActionId-a7d41d9.N48ace154.0.15d0e1a8826.N7cf4</con2:id>
-                                <con4:script><![CDATA[var $body = process.body;
+                                <con4:script>var $body = process.body;
 process.body={
-            "ite003Request":
-                    process.body
-                  
-             }
-             
-process.outbound = '<con:endpoint name="BusinessService$AmilSBITEs$v1$ITE003$Business$ITE003AplAmil" xmlns:con="http://www.bea.com/wli/sb/context"><con:service/><con:transport><con:mode>request-response</con:mode><con:qualityOfService>best-effort</con:qualityOfService><con:request xsi:type="http:HttpRequestMetaData" xmlns:http="http://www.bea.com/wli/sb/transports/http" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><tran:headers xsi:type="http:HttpRequestHeaders" xmlns:tran="http://www.bea.com/wli/sb/transports"><tran:user-header name="Authorization" value="Bearer 104bf8d3-d4c1-461c-9139-c565635010a3"/><http:Content-Type>application/x-www-form-urlencoded</http:Content-Type><user-metadata name="cep" value="12312" xmlns="http://www.bea.com/wli/sb/transports"/><user-metadata name="cpf" value="12312" xmlns="http://www.bea.com/wli/sb/transports"/></tran:headers></con:request></con:transport><con:security><con:doOutboundWss>true</con:doOutboundWss></con:security></con:endpoint>']]></con4:script>
+            "ite003Request":{
+                    "cpf": $body.cpf,
+                    "cep": $body.cep,
+                    "token" : process.token
+                  }
+        }</con4:script>
                             </con4:javaScript>
-                            <con3:log>
-                                <con2:id>_ActionId-a640113.N56d0595c.0.15d5929e756.N7ffe</con2:id>
-                                <con3:logLevel>error</con3:logLevel>
-                                <con3:expr>
-                                    <con2:xqueryText>$outbound</con2:xqueryText>
-                                </con3:expr>
-                                <con3:message>*********************** teste *************************</con3:message>
-                            </con3:log>
                         </con1:outboundTransform>
                         <con1:responseTransform>
-                            <con3:log>
-                                <con2:id>_ActionId-a7d41d9.742d0df0.0.15cef08e272.N7fc4</con2:id>
-                                <con3:logLevel>error</con3:logLevel>
-                                <con3:expr>
-                                    <con2:xqueryText>$body</con2:xqueryText>
-                                </con3:expr>
-                                <con3:message>Response ITE003 ************</con3:message>
-                            </con3:log>
                             <con4:javaScript xmlns:con4="http://www.bea.com/wli/sb/stages/transform/config">
-                                <con2:id>_ActionId-a7d41d9.742d0df0.0.15cef08e272.N7fc1</con2:id>
+                                <con2:id>_ActionId-a655923.N43d1a49a.0.15d755b4c24.N7fc9</con2:id>
                                 <con4:script>var $body = process.body;
-process.codResponse = $body.ite003Response.codResponse
-
-if($body.ite003Response.codResponse == "ITE003-0000"){
-process.nomeCorretor = $body.ite003Response.nomeCorretor;
-process.descCodResponse = $body.ite003Response.descCodResponse;
-process.body={
-            "ite003Response":{
-                    "nomeCorretor": process.nomeCorretor,
-                    "codResponse": process.codResponse,
-                    "descCodResponse": process.descCodResponse
-                  }
-		}
-}else{
-process.descCodResponse = $body.ite003Response.descCodResponse
-	process.body={
-            "ite003Response":{
-                    "codResponse": process.codResponse,
-                    "descCodResponse": process.descCodResponse
-                  }
-        }
-}</con4:script>
+process.body= $body</con4:script>
                             </con4:javaScript>
                         </con1:responseTransform>
                     </con1:route>

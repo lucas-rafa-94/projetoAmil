@@ -8,7 +8,7 @@ module.exports = function(app) {
                 }
             };
 
-            console.log(req);
+            console.log(req.headers);
             console.log('Request ITE - 003 : ' + JSON.stringify(req.params));
 
             if(req.header('authorization') === "Bearer 104bf8d3-d4c1-461c-9139-c565635010a3") {

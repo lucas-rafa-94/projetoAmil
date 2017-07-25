@@ -27,6 +27,7 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/ResourceBundlesContentSet"/>
    </list>
    <list n="listOfChildren">
+      <hash><url n="URL" path="AmilSBAplJava/AmilSBAplJava.jpr"/></hash>
       <hash><url n="URL" path="AmilSBITEs/AmilSBITEs.jpr"/></hash>
       <hash><url n="URL" path="AmilSBOauth2/AmilSBOauth2.jpr"/></hash>
    </list>

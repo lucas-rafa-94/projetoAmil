@@ -24,6 +24,7 @@
             <env:value>/AmilSBITEs/ITE003</env:value>
         </tran:URI>
         <tran:inbound-properties/>
+        <tran:all-headers>true</tran:all-headers>
         <tran:provider-specific xsi:type="http:HttpEndPointConfiguration" xmlns:http="http://www.bea.com/wli/sb/transports/http">
             <http:inbound-properties/>
             <http:compression>
