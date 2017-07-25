@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ns:composite xmlns:ns="http://xmlns.oracle.com/sca/1.0">
     <ns:reference>
+        <ns:interface src="ProxyService:AmilSBAplJava/v1/GetTokenAmil/Proxy/GetTokenAmil"/>
+    </ns:reference>
+    <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE007/Business/ITE007AplAmil"/>
     </ns:reference>
     <ns:reference>
@@ -13,6 +16,9 @@
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE006/Business/ITE006AplAmil"/>
     </ns:reference>
     <ns:reference>
+        <ns:interface src="ProxyService:AmilSBAplJava/v1/ITE003/Proxy/ITE003AplJava"/>
+    </ns:reference>
+    <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE004/Business/ITE004AplAmil"/>
     </ns:reference>
     <ns:reference>
@@ -22,7 +28,7 @@
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE003/Business/ITE003AplAmil"/>
     </ns:reference>
     <ns:reference>
-        <ns:interface src="BusinessService:AmilSBOauth2/v1/Oauth2/Business/getOauthCodeBus"/>
+        <ns:interface src="ProxyService:AmilSBOauth2/v1/Oauth2/Proxy/GetTokenCode"/>
     </ns:reference>
     <ns:reference>
         <ns:interface src="BusinessService:AmilSBITEs/v1/ITE019/Business/ITE019AplAmil"/>

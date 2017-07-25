@@ -11,7 +11,7 @@ import org.json.JSONObject;
  */
 public class ITE003 {
 
-    public static String sendIte003(String body){
+    public static String sendIte003(String body) throws Exception{
 
         String output = "";
         String auth = "";
@@ -34,7 +34,7 @@ public class ITE003 {
             int res = response.getStatus();
             output = response.getEntity(String.class);
         }catch (Exception e){
-            e.printStackTrace();
+            throw e;
         }
       return output;
     };

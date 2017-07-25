@@ -26,13 +26,12 @@
                 <con:actions>
                     <con1:wsCallout>
                         <con2:id>_ActionId-a655923.N43d1a49a.0.15d755b4c24.N7f57</con2:id>
-                        <con1:service ref="AmilSBOauth2/v1/Oauth2/Business/getOauthCodeBus" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
-                        <con1:operation>GET</con1:operation>
+                        <con1:service ref="AmilSBOauth2/v1/Oauth2/Proxy/GetTokenCode" xsi:type="ref:ProxyRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
                         <con1:request>
-                            <con1:payload wrapped="false"/>
+                            <con1:payload/>
                         </con1:request>
                         <con1:response>
-                            <con1:payload wrapped="false">bodyTokenResponse</con1:payload>
+                            <con1:payload wrapped="false">reponseTokenBody</con1:payload>
                         </con1:response>
                         <con1:requestTransform/>
                         <con1:responseTransform>

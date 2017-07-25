@@ -3,7 +3,4 @@
     <ns:reference>
         <ns:interface src="BusinessService:AmilSBOauth2/v1/Oauth2/Business/getOauthCodeAmilBus"/>
     </ns:reference>
-    <ns:reference>
-        <ns:interface src="BusinessService:AmilSBOauth2/v1/Oauth2/Business/getOauthCodeBus"/>
-    </ns:reference>
 </ns:composite>

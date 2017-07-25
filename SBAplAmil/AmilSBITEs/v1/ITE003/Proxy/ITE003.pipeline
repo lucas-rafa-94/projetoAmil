@@ -17,6 +17,10 @@
                         <con2:id>_ActionId-a7d41d9.742d0df0.0.15cef08e272.N7ffb</con2:id>
                         <con1:errCode>ITE003</con1:errCode>
                     </con1:Error>
+                    <con3:log>
+                        <con2:id>_ActionId-a655923.N43d1a49a.0.15d755b4c24.N7e82</con2:id>
+                        <con3:logLevel>debug</con3:logLevel>
+                    </con3:log>
                 </con:actions>
             </con:stage>
         </con:pipeline>
@@ -26,13 +30,12 @@
                 <con:actions>
                     <con1:wsCallout>
                         <con2:id>_ActionId-a000201.N73850edc.0.15d42aa3317.N7ff9</con2:id>
-                        <con1:service ref="AmilSBOauth2/v1/Oauth2/Business/getOauthCodeBus" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
-                        <con1:operation>GET</con1:operation>
+                        <con1:service ref="AmilSBAplJava/v1/GetTokenAmil/Proxy/GetTokenAmil" xsi:type="ref:ProxyRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
                         <con1:request>
-                            <con1:payload wrapped="false"/>
+                            <con1:payload wrapped="true">body</con1:payload>
                         </con1:request>
                         <con1:response>
-                            <con1:payload wrapped="false">bodyTokenResponse</con1:payload>
+                            <con1:payload wrapped="true">bodyTokenResponse</con1:payload>
                         </con1:response>
                         <con1:requestTransform/>
                         <con1:responseTransform>
@@ -46,11 +49,12 @@
                             </con3:log>
                         </con1:responseTransform>
                     </con1:wsCallout>
-                    <con1:javaScript>
-                        <con2:id>_ActionId-a655879.N259e6474.0.15d50f1bf56.N7ffd</con2:id>
-                        <con1:script>var $responseToken = process.bodyTokenResponse;
-process.token = $responseToken.access_token;</con1:script>
-                    </con1:javaScript>
+                    <con1:assign varName="token">
+                        <con2:id>_ActionId-a655923.N43d1a49a.0.15d755b4c24.N7dd7</con2:id>
+                        <con1:expr>
+                            <con2:xqueryText>$bodyTokenResponse/text()</con2:xqueryText>
+                        </con1:expr>
+                    </con1:assign>
                 </con:actions>
             </con:stage>
         </con:pipeline>
