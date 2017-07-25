@@ -33,10 +33,12 @@ public class ITE003 {
 
             int res = response.getStatus();
             output = response.getEntity(String.class);
+
+            return output;
         }catch (Exception e){
             throw e;
         }
-      return output;
+
     };
 
 }

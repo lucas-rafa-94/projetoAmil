@@ -31,10 +31,12 @@ public class GetTokenAmil {
             int res = response.getStatus();
             output = response.getEntity(String.class);
             jsonObject = new JSONObject(output);
+
+            return jsonObject.getString("access_token");
         }catch (Exception e){
             throw e;
         }
-        return jsonObject.getString("access_token");
+
     };
 
 }
